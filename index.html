@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time Doesn't Slow Down. You Do.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1410;
+  --cream: #f5f0e8;
+  --warm: #e8dfd2;
+  --accent: #8b2500;
+  --accent-light: #e8622a;
+  --subtle: #5a4e42;
+  --highlight: #fff3cd;
+
+/* Dark surface palette — higher contrast than raw –ink */
+–dark-bg: #221c17;
+–dark-text: #f0ebe0;
+–dark-muted: #b8aa98;
+–dark-strong: #f4a06a;
+}
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Force light mode — prevent browser dark-mode override */
+:root { color-scheme: light only; }
+
+body {
+background: var(–cream) !important;
+color: var(–ink) !important;
+font-family: ‘Source Serif 4’, Georgia, serif;
+font-size: 19px;
+line-height: 1.72;
+-webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(–accent); color: var(–cream); }
+
+/* ── HERO ── */
+.hero {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 2rem;
+position: relative;
+overflow: hidden;
+background: var(–cream);
+color: var(–ink);
+}
+
+.hero::before {
+content: ‘’;
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse at 30% 20%, rgba(139,37,0,0.06) 0%, transparent 60%),
+radial-gradient(ellipse at 70% 80%, rgba(139,37,0,0.04) 0%, transparent 50%);
+pointer-events: none;
+}
+
+.hero h1 {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: clamp(2.8rem, 7vw, 5.5rem);
+font-weight: 900;
+line-height: 1.08;
+max-width: 14ch;
+letter-spacing: -0.02em;
+margin-bottom: 1.5rem;
+}
+
+.hero h1 em { font-style: italic; color: var(–accent); }
+
+.hero .subtitle {
+font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+color: var(–subtle);
+max-width: 38ch;
+font-weight: 300;
+line-height: 1.6;
+}
+
+.scroll-hint {
+position: absolute;
+bottom: 2.5rem;
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.75rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–subtle);
+opacity: 0.6;
+animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+0%, 100% { opacity: 0.3; transform: translateY(0); }
+50% { opacity: 0.7; transform: translateY(4px); }
+}
+
+/* ── ARTICLE ── */
+article {
+max-width: 680px;
+margin: 0 auto;
+padding: 0 1.5rem 6rem;
+}
+
+h2 {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: clamp(1.6rem, 4vw, 2.2rem);
+font-weight: 700;
+margin: 4rem 0 1.5rem;
+line-height: 1.25;
+letter-spacing: -0.01em;
+}
+
+h2:first-of-type { margin-top: 0; }
+p { margin-bottom: 1.4rem; }
+
+.lead {
+font-size: 1.15rem;
+font-weight: 300;
+color: var(–subtle);
+border-left: 3px solid var(–accent);
+padding-left: 1.2rem;
+margin: 2.5rem 0;
+}
+
+.callout {
+background: var(–dark-bg);
+color: var(–dark-text);
+padding: 2.2rem 2.5rem;
+margin: 2.5rem -1rem;
+border-radius: 2px;
+font-size: 1.05rem;
+line-height: 1.75;
+}
+
+.callout strong { color: var(–dark-strong); }
+
+.callout-warm {
+background: var(–warm);
+color: var(–ink);
+padding: 1.8rem 2rem;
+margin: 2.5rem 0;
+border-left: 4px solid var(–accent);
+border-radius: 0 2px 2px 0;
+}
+
+.equation {
+font-family: ‘JetBrains Mono’, monospace;
+text-align: center;
+font-size: 1.1rem;
+padding: 1.8rem;
+margin: 2rem 0;
+background: var(–warm);
+border-radius: 2px;
+letter-spacing: 0.02em;
+}
+
+.equation .label {
+display: block;
+font-size: 0.78rem;
+color: var(–subtle);
+margin-top: 0.6rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+}
+
+.separator {
+text-align: center;
+margin: 3.5rem 0;
+color: var(–accent);
+font-size: 1.4rem;
+letter-spacing: 0.4em;
+opacity: 0.4;
+}
+
+.comparison {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1.5rem;
+margin: 2.5rem 0;
+}
+
+.comparison > div { padding: 1.5rem; border-radius: 2px; }
+.comparison .old { background: var(–warm); opacity: 0.85; }
+.comparison .new { background: var(–dark-bg); color: var(–dark-text); }
+
+.comparison .tag {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.7rem;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+margin-bottom: 0.8rem;
+color: var(–dark-muted);
+}
+
+.comparison p { font-size: 0.95rem; margin-bottom: 0; }
+
+strong { font-weight: 600; }
+em { font-style: italic; }
+
+.drop-cap::first-letter {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: 3.8rem;
+float: left;
+line-height: 0.8;
+padding-right: 0.12em;
+padding-top: 0.08em;
+font-weight: 900;
+color: var(–accent);
+}
+
+.section-num {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.7rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–accent);
+display: block;
+margin-bottom: 0.4rem;
+}
+
+.footnote {
+font-size: 0.88rem;
+color: var(–subtle);
+margin-top: 4rem;
+padding-top: 2rem;
+border-top: 1px solid var(–warm);
+}
+
+.footnote p { margin-bottom: 0.8rem; }
+
+.closing {
+text-align: center;
+margin: 5rem 0 3rem;
+padding: 3rem 2rem;
+}
+
+.closing p {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: clamp(1.3rem, 3vw, 1.7rem);
+font-weight: 400;
+font-style: italic;
+max-width: 32ch;
+margin: 0 auto;
+line-height: 1.5;
+color: var(–accent);
+}
+
+/* ── BUDGET DEMO ── */
+.demo-block {
+margin: 2.5rem 0;
+background: var(–dark-bg);
+border-radius: 4px;
+padding: 2rem 2rem 1.5rem;
+color: var(–dark-text);
+}
+
+.demo-block .demo-label {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.7rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–dark-strong);
+margin-bottom: 1.4rem;
+}
+
+.demo-block .slider-row {
+display: flex;
+align-items: center;
+gap: 1rem;
+margin-bottom: 1rem;
+}
+
+.demo-block label {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.82rem;
+min-width: 9ch;
+color: var(–dark-muted);
+}
+
+.demo-block input[type=range] {
+flex: 1;
+accent-color: var(–accent-light);
+cursor: pointer;
+height: 4px;
+}
+
+.demo-block .val {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.82rem;
+min-width: 5ch;
+text-align: right;
+color: var(–dark-text);
+}
+
+.bars-wrap {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1rem;
+margin: 1.4rem 0 0.4rem;
+}
+
+.bar-item { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.bar-item .bar-label {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.68rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(–dark-muted);
+}
+
+.bar-track {
+height: 10px;
+background: rgba(255,255,255,0.14);
+border-radius: 2px;
+overflow: hidden;
+}
+
+.bar-fill {
+height: 100%;
+border-radius: 2px;
+transition: width 0.15s ease;
+}
+
+.bar-motion .bar-fill { background: #e8622a; }
+.bar-internal .bar-fill { background: #5dbf82; }
+
+.bar-item .bar-pct {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.78rem;
+color: var(–dark-text);
+}
+
+.demo-verdict {
+margin-top: 1.2rem;
+font-size: 0.92rem;
+font-style: italic;
+color: var(–dark-muted);
+min-height: 1.4em;
+transition: color 0.3s;
+}
+
+/* ── PULSE VIZ ── */
+.pulse-demo {
+margin: 2.5rem 0;
+background: var(–warm);
+border-radius: 4px;
+padding: 2rem;
+border-left: 4px solid var(–accent);
+}
+
+.pulse-demo .demo-label {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.7rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–accent);
+margin-bottom: 1.4rem;
+}
+
+.pulse-row {
+display: flex;
+align-items: center;
+gap: 1.2rem;
+margin-bottom: 1.2rem;
+}
+
+.pulse-row .p-label {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.8rem;
+min-width: 7ch;
+color: var(–subtle);
+}
+
+.pulse-track {
+flex: 1;
+height: 32px;
+background: white;
+border-radius: 3px;
+position: relative;
+overflow: hidden;
+}
+
+.pulse-dot {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background: var(–accent);
+}
+
+.pulse-speed-control {
+display: flex;
+align-items: center;
+gap: 1rem;
+margin-top: 1rem;
+}
+
+.pulse-speed-control label {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.78rem;
+color: var(–subtle);
+}
+
+.pulse-speed-control input[type=range] {
+flex: 1;
+accent-color: var(–accent);
+cursor: pointer;
+}
+
+.pulse-ticks {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.78rem;
+color: var(–subtle);
+margin-top: 0.8rem;
+}
+
+.tick-counts {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 0.5rem;
+margin-top: 0.4rem;
+}
+
+.tick-count {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.82rem;
+}
+
+.tick-count span {
+font-size: 1.1rem;
+font-weight: 500;
+color: var(–accent-light);
+}
+
+@media (max-width: 600px) {
+body { font-size: 17px; }
+.comparison { grid-template-columns: 1fr; }
+.callout { margin: 2rem -0.5rem; padding: 1.5rem; }
+article { padding: 0 1.2rem 4rem; }
+.bars-wrap { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+<body>
+
+<section class="hero">
+  <h1>Time Doesn't Slow Down. <em>You Do.</em></h1>
+  <p class="subtitle">The standard story about time dilation is mathematically correct — but it starts with more than it needs to.</p>
+  <span class="scroll-hint">↓ scroll ↓</span>
+</section>
+
+<article>
+
+<span class="section-num">The standard story</span>
+
+<h2>You Don't Need Spacetime to Get Here</h2>
+
+<p class="drop-cap">You've been told a story. It goes like this: there is a thing called spacetime. It is a fabric, a manifold, a four-dimensional arena. When you move fast, spacetime warps around you, and time — whatever that is — slows down. When you stand near something massive, spacetime curves, and time slows down again. Nobody can tell you what time actually is. But they can tell you it dilates.</p>
+
+<p>It's a reasonable story. The equations work. Every prediction matches experiment. But it starts with more than it needs to. The full Lorentz transformation — every equation of special relativity — can be derived from two things only: counts of physical events, and light signals. No manifold. No fabric. No arena. No synchronisation convention. Just a clock ticking and a beam of light.</p>
+
+<p>The Lorentz transformation isn't a fact about a geometric object called spacetime. It is a fact about what happens to counting processes when you move. Spacetime is a useful summary of those facts — a tool, not the territory.</p>
+
+<p>The story below uses the same equations, makes the same predictions, and actually explains what's happening — without borrowing a manifold first.</p>
+
+<div class="separator">• • •</div>
+
+<span class="section-num">The simple version</span>
+
+<h2>What a Second Actually Is</h2>
+
+<p>A second is not a unit of time. A second is 9,192,631,770 oscillations of a cesium-133 atom. That's the definition. Not a metaphor. Not a simplification. The official, internationally agreed-upon definition of one second is a count of physical events happening inside an atom.</p>
+
+<p>Time dilation is the observation that this count changes. A moving cesium clock accumulates fewer oscillations between two events than a stationary one. That's what the experiments measure. Not "time slowing down." A physical process running at a different rate.</p>
+
+<div class="callout">
+<strong>Substitute the definition into the observation.</strong><br><br>
+Definition: one second = 9,192,631,770 cesium oscillations.<br><br>
+Observation: a moving clock records fewer seconds between two events.<br><br>
+Translation: a moving cesium atom undergoes fewer oscillations between two events.<br><br>
+No "time" needed. A physical process is constrained. That's what was measured. The word "time" was inserted between the definition and the discovery, creating an entity that was never in the data.
+</div>
+
+<div class="separator">• • •</div>
+
+<span class="section-num">The constraint</span>
+
+<h2>There Is a Fixed Budget</h2>
+
+<p>Here is the fact that changes everything: every physical system has a fixed total capacity — shared between moving through space and running its internal machinery. The speed of light is what 100% capacity in one direction looks like. You cannot exceed it because there is no remaining capacity to deploy.</p>
+
+<p>When you are sitting still, the entire capacity goes to internal processes — atoms vibrating, chemistry happening, neurons firing. Your internal machinery runs at full speed.</p>
+
+<p>When you start moving, some of that capacity gets redirected to motion. The faster you move through space, the less remains for internal processes. Your atoms vibrate slower. Your chemistry runs slower. Your neurons fire slower. Not because "time slowed down." Because your internal machinery has less capacity left.</p>
+
+<div class="equation">
+(internal rate)² + (spatial speed / c)² = 1
+<span class="label">The budget equation — always adds to one, always</span>
+</div>
+
+<!-- ── INTERACTIVE BUDGET DEMO ── -->
+
+<div class="demo-block">
+  <div class="demo-label">▸ Interactive — drag to see the trade-off</div>
+
+  <div class="slider-row">
+    <label>Speed</label>
+    <input type="range" id="speedSlider" min="0" max="99" value="0" step="1">
+    <span class="val" id="speedVal">0% of c</span>
+  </div>
+
+  <div class="bars-wrap">
+    <div class="bar-item bar-motion">
+      <div class="bar-label">Motion capacity used</div>
+      <div class="bar-track"><div class="bar-fill" id="motionBar" style="width:0%"></div></div>
+      <div class="bar-pct" id="motionPct">0%</div>
+    </div>
+    <div class="bar-item bar-internal">
+      <div class="bar-label">Internal dynamics remaining</div>
+      <div class="bar-track"><div class="bar-fill" id="internalBar" style="width:100%"></div></div>
+      <div class="bar-pct" id="internalPct">100%</div>
+    </div>
+  </div>
+
+  <div class="demo-verdict" id="verdict">At rest — full internal capacity. Your chemistry, your clocks, your aging: all running at maximum.</div>
+</div>
+
+<p>At the speed of light, the spatial speed term equals one. The internal rate equals zero. All capacity consumed by motion. No internal processes can execute. Nothing vibrates. Nothing transitions. Nothing happens inside. This is why photons don't age — they have no internal dynamics left. Their entire capacity is motion.</p>
+
+<p>At zero speed, the internal rate equals one. Full capacity for internal processes. Maximum vibration, maximum chemistry, maximum life. This is why sitting still is the fastest way to age.</p>
+
+<div class="separator">• • •</div>
+
+<span class="section-num">Watch it happen</span>
+
+<h2>Internal Dynamics, Slowing Down</h2>
+
+<p>The slowing isn't abstract. Every oscillation that doesn't happen is a tick that doesn't register. Drag the speed up and watch the two clocks diverge — the moving one accumulates fewer counts over the same elapsed wall time.</p>
+
+<!-- ── PULSE VISUALISATION ── -->
+
+<div class="pulse-demo">
+  <div class="demo-label">▸ Interactive — compare tick accumulation</div>
+
+  <div class="pulse-row">
+    <span class="p-label">At rest</span>
+    <div class="pulse-track" id="trackA">
+      <div class="pulse-dot" id="dotA"></div>
+    </div>
+  </div>
+
+  <div class="pulse-row">
+    <span class="p-label">Moving</span>
+    <div class="pulse-track" id="trackB">
+      <div class="pulse-dot" id="dotB"></div>
+    </div>
+  </div>
+
+  <div class="pulse-speed-control">
+    <label>Moving clock speed:</label>
+    <input type="range" id="pulseSlider" min="0" max="95" value="60" step="5">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--subtle);min-width:6ch" id="pulseSpeedLabel">60% c</span>
+  </div>
+
+  <div class="tick-counts">
+    <div class="tick-count">At rest ticks: <span id="tickA">0</span></div>
+    <div class="tick-count">Moving ticks: <span id="tickB">0</span></div>
+  </div>
+  <div class="pulse-ticks" id="tickRatio" style="margin-top:0.6rem"></div>
+</div>
+
+<p>Those missing ticks are not a measurement error. They are not an illusion. The moving system genuinely executed fewer internal state changes. Fewer oscillations happened. The count is smaller. When the two systems rejoin, one has accumulated fewer transitions — it has aged less, in the only sense "aging" has physical content.</p>
+
+<div class="separator">• • •</div>
+
+<span class="section-num">An unfinished revolution</span>
+
+<h2>Bondi Almost Got There in 1964</h2>
+
+<p>Hermann Bondi — one of the sharpest mathematical physicists of the twentieth century — did something quietly remarkable in 1964. He derived the complete Lorentz transformation from two primitives only: clock readings and light signals. No manifold. No metric. No synchronisation convention. Just counts and light.</p>
+
+<p>His method, the k-calculus, was elegant and complete. The k-factor — the ratio of received signal counts to sent signal counts between two observers — encodes the full Lorentz transformation in a single number. Everything special relativity says about time dilation and simultaneity falls out of two algebraic identities involving k.</p>
+
+<p>And then Bondi stopped. He presented the k-calculus as a pedagogical device — a cleaner way to <em>teach</em> special relativity, not a foundational statement about what special relativity <em>is</em>. The method sat in textbooks for sixty years, admired for its elegance, its implications unexplored.</p>
+
+<div class="callout-warm">
+<strong>Why didn't anyone push further?</strong> It probably wasn't inhibition. Bondi himself was not a cautious thinker — he was one of the physicists who fought hardest to establish gravitational waves as physically real when others doubted them. The more likely explanation is simpler: the geometric picture of spacetime was working. Einstein's framework made predictions that kept being confirmed. Nobody felt the need to ask whether spacetime was a starting assumption or a derived summary, because the assumption was producing correct answers.<br><br>
+The question "do we actually need the manifold as a starting point, or does it follow from counting?" wasn't suppressed. It just wasn't asked. Bondi had the derivation that would have answered it. He used it to teach freshmen. Sometimes the most important questions are the ones that feel too obvious to raise.
+</div>
+
+<p>The k-calculus works because counting processes and light signals are all the physics requires. Spacetime is what those counting relations look like when you draw them on a diagram. Bondi drew the diagram and taught the diagram. The counting was always underneath it.</p>
+
+<div class="separator">• • •</div>
+
+<span class="section-num">Why it feels so real</span>
+
+<h2>The Experience Is Not the Entity</h2>
+
+<p>Here is the most natural objection to everything above: time is the most immediate thing in human experience. You live in the present moment. You remember your past. You anticipate your future. Time doesn't feel like an abstraction — it feels like the medium of existence itself.</p>
+
+<p>This is true. And it doesn't contradict anything in this article.</p>
+
+<p>The experience of time is real. What you are experiencing is the accumulation of internal state changes — neurons firing, chemistry executing, memory encoding. Each moment feels present because your internal machinery is running. The past feels different because those states have already been counted. The future feels open because those counts haven't happened yet.</p>
+
+<div class="callout">
+<strong>The experience doesn't require an independent entity.</strong><br><br>
+You don't need "time" to exist as a thing-in-the-world for the experience of duration to be genuine. The duration you feel is real — it's the count of your internal transitions. The anticipation you feel is real — it's your brain's model of future states. The memory you feel is real — it's your brain's record of past states.<br><br>
+What isn't required is a substance, a dimension, or an arena called time that exists independently of those processes. The experience is what internal dynamics feel like from the inside. There is no further entity needed to explain it.
+</div>
+
+<p>Physics has always had to separate what is experienced from what is required to explain the experience. The sun feels like it moves across the sky. The Earth moves, not the sun — but the experience is real. Heat feels like a substance flowing into cold objects. It's molecular motion — but the sensation of warmth is real. Time feels like a river carrying us forward. It's internal dynamics accumulating — and the feeling of being carried is real.</p>
+
+<p>The goal isn't to deny the experience. It's to give the experience an honest account.</p>
+
+<div class="separator">• • •</div>
+
+<span class="section-num">This is not a metaphor</span>
+
+<h2>The Equation That Proves It</h2>
+
+<p>In 2015, a team led by Igor Pikovski published a paper in <em>Nature Physics</em> showing exactly how this works at the quantum level. The Pikovski Hamiltonian describes how a composite system's internal energy changes with velocity:</p>
+
+<div class="equation">
+H ≈ γmc² + Ĥ₀/γ
+<span class="label">The Pikovski Hamiltonian — internal energy multiplied by the Lorentz factor</span>
+</div>
+
+<p>The Ĥ₀ is the system's internal energy — everything happening inside it. The 1/γ is the Lorentz factor, which shrinks as velocity increases. As velocity increases, 1/γ shrinks. At the speed of light, it reaches zero. The internal energy term is literally multiplied by zero.</p>
+
+<p>This is not an interpretation. It is what the equation says. "Motion constrains internal dynamics" is not a way of looking at the math. It <em>is</em> the math.</p>
+
+<div class="separator">• • •</div>
+
+<span class="section-num">The examples</span>
+
+<h2>You Already Know This Is True</h2>
+
+<p>Every conversion between motion and internal energy confirms the budget picture.</p>
+
+<p><strong>A particle collider</strong> smashes protons together at 99.99% the speed of light. Their kinetic energy converts to internal energy so intense it creates entirely new particles. The budget violently reallocated from motion to internal dynamics.</p>
+
+<p><strong>A photon</strong> travels at c. All budget in motion, zero internal dynamics. When it hits an atom and gets absorbed, it stops. Its energy transfers entirely to the atom's internal state — the atom jumps to a higher energy level. The budget flips from all-motion to all-internal.</p>
+
+<p><strong>A spacecraft</strong> re-entering the atmosphere converts kinetic energy to heat. It glows. It burns. The budget reallocates from motion to internal dynamics.</p>
+
+<p>In every case: deceleration is heating. Acceleration is cooling of internal processes. This is not a new theory. It is what energy conservation already says, read through the lens of the Pikovski Hamiltonian.</p>
+
+<div class="separator">• • •</div>
+
+<span class="section-num">Gravity</span>
+
+<h2>The Same Story Explains Gravitational Time Dilation</h2>
+
+<p>Clocks tick slower near massive objects. The budget picture says: the metric tensor — the mathematical object that describes gravity in general relativity — is not a geometric stage. It is a resource allocator. It distributes the available internal-dynamics capacity differently at different locations.</p>
+
+<p>Near a massive object, more of the budget is consumed by the gravitational geometry. Less remains for internal processes. Clocks tick slower. Chemistry runs slower. You age slower. Not because time warps. Because the budget at that location allocates less to your internal machinery.</p>
+
+<div class="equation">
+dτ = dt × √(1 − 2GM/rc²)
+<span class="label">Gravitational time dilation — same constraint, gravitational source</span>
+</div>
+
+<p>The deeper in the gravitational well you are, the smaller the factor. At the event horizon of a black hole, the factor reaches zero. All budget consumed by geometry. No internal dynamics. Same structure as reaching the speed of light — the capacity hits zero from a different direction.</p>
+
+<div class="separator">• • •</div>
+
+<span class="section-num">The twin paradox</span>
+
+<h2>There Was Never a Paradox</h2>
+
+<p>One twin travels at high speed and returns younger than the twin who stayed home. The budget picture dissolves it. The traveling twin's internal machinery was running at reduced capacity during the journey — fewer oscillations, fewer chemical reactions, fewer state changes accumulated. The stay-at-home twin's machinery ran at full capacity.</p>
+
+<p>The asymmetry is physical, not perspectival. The traveling twin accelerated — departed, turned around, came back. Those accelerations redistributed the budget and broke the symmetry. The traveler accumulated fewer internal state changes. Fewer ticks. Less aging. No paradox. Just accounting.</p>
+
+<div class="separator">• • •</div>
+
+<span class="section-num">What time actually is</span>
+
+<h2>Time Is a Label, Not a Thing</h2>
+
+<p>In 1983, Don Page and William Wootters showed something remarkable. Take a quantum system that is globally static — nothing changes, nothing evolves. Split it into two entangled subsystems. From inside one subsystem, looking at the other, it appears to evolve. Time emerges from entanglement correlations in a system where nothing is "happening" globally.</p>
+
+<p>In 2014, a team in Turin confirmed this experimentally with entangled photons. Time is real for the internal observer. Time is absent for the external observer. Same system. Different perspectives. Time is not a background against which things happen. Time is what internal correlations look like from the inside.</p>
+
+<div class="comparison">
+  <div class="old">
+    <div class="tag">The old story</div>
+    <p>Time is a dimension of spacetime. It flows. It can warp, stretch, loop, and reverse. Things exist in time the way fish exist in water.</p>
+  </div>
+  <div class="new">
+    <div class="tag">What the physics says</div>
+    <p>Time is internal dynamics. It is atoms vibrating, chemistry executing, state changes accumulating. There is no water. There are only fish.</p>
+  </div>
+</div>
+
+<p>The equations of physics use a symbol, <em>t</em>, and model it with the real number line — which extends to negative infinity, admits closed loops, and is symmetric under reversal. No experiment has ever measured negative time. No experiment has ever observed a closed time loop. No experiment has ever reversed the temporal parameter. These are properties of the mathematical tool, not of reality.</p>
+
+<p>And spacetime itself is in the same position. It is a tool — a compact way to summarize the constraint relations between counting processes. It is not the arena in which physics happens. There is no arena. There are only counts, light signals, and the budget that connects them.</p>
+
+<div class="separator">• • •</div>
+
+<span class="section-num">What changes</span>
+
+<h2>Why This Matters</h2>
+
+<p><strong>Time travel is not a physics problem.</strong> It's a mathematical artifact. The equations of general relativity admit solutions with closed timelike curves. But those solutions exist because the mathematics uses a number line that admits loops. Physical counting processes don't loop. A clock transported along such a curve keeps ticking forward — accumulating oscillations, never revisiting a previous count.</p>
+
+<p><strong>The block universe is not the default.</strong> The idea that past, present, and future all equally exist — because all values of <em>t</em> have equal mathematical status on the real number line — is a philosophical conclusion smuggled in through a mathematical choice. Under the operational definition, the "present" is where the oscillation count is. Future counts haven't happened. They're predictions, not locations.</p>
+
+<p><strong>The arrow of time is two separate things.</strong> Why do processes accumulate rather than un-accumulate? That's structural — it's how counting works. You can't un-count. Why does entropy increase? That's a boundary condition — our universe started in a low-entropy state. These are different questions with different answers, conflated by a single symbol.</p>
+
+<div class="callout-warm">
+<strong>Nothing changes in the equations.</strong> Not one prediction is altered. Not one experiment comes out differently. What changes is what the equations are taken to imply about reality. Time travel, the block universe, and spacetime as a fundamental arena were never predicted by physics. They were predicted by properties of the mathematical tools physics borrowed — and then mistook for the territory.
+</div>
+
+<div class="separator">• • •</div>
+
+<span class="section-num">The bottom line</span>
+
+<h2>The Simplest Version</h2>
+
+<p>There is a fixed total capacity. The speed of light is what 100% of that capacity in one direction looks like. Everything that exists divides this capacity between moving through space and running its internal machinery.</p>
+
+<p>Move faster → less internal capacity → fewer oscillations → "time slows down."</p>
+
+<p>Sit in a gravitational well → geometry claims more capacity → less internal capacity → "time slows down."</p>
+
+<p>Reach the speed of light → all capacity in motion → zero internal capacity → "time stops."</p>
+
+<p>The word "time" was never needed. There are internal dynamics. There is a capacity. There is a constraint. Spacetime is a useful map of how those constraints relate — not the territory itself. The rest is a label we attached to the experience of being a physical system that counts its own oscillations.</p>
+
+<p>The equations knew this all along. The Pikovski Hamiltonian says it in one line: Ĥ₀/γ. Internal dynamics, multiplied by the Lorentz factor. As you speed up, your insides slow down. Not because time changes. Because you have less capacity to be.</p>
+
+<section class="closing">
+  <p>Time doesn't slow down. Your internal dynamics do. And the speed of light is what zero capacity looks like from the outside.</p>
+</section>
+
+<div class="footnote">
+  <p><strong>Based on:</strong> "Surplus Structure in the Temporal Parameter: Consequences of the Mass-Shell Constraint and the PaW-Pikovski Equivalence" (Rajagopalan, 2026). The technical paper establishes that three properties of the mathematical temporal parameter — negative extension, loop-admitting topology, and reversal symmetry — are surplus structure: present in the formalism, absent from physics. The full Lorentz transformation is derived from counts and light signals alone, without importing a spacetime manifold.</p>
+
+  <p><strong>Read the papers:</strong><br>
+  Paper 1 — <a href="https://doi.org/10.5281/zenodo.19386819" style="color:var(--accent)">Surplus Structure in the Temporal Parameter</a> (doi:10.5281/zenodo.19386819)<br>
+  Paper 2 — <a href="https://doi.org/10.5281/zenodo.19387399" style="color:var(--accent)">Quantum Corrections to the Lorentz Transformation</a> (doi:10.5281/zenodo.19387399)</p>
+  <p><strong>Key references:</strong> Pikovski et al., <em>Nature Physics</em> 11, 668 (2015). Smith & Ahmadi, <em>Nature Communications</em> 11, 5360 (2020). Page & Wootters, <em>Physical Review D</em> 27, 2885 (1983). Moreva et al., <em>Physical Review A</em> 89, 052122 (2014). Favalli & Smerzi, <em>Entropy</em> 27(5), 489 (2025). Bondi, <em>Relativity and Common Sense</em> (1964) — the k-calculus derivation of the Lorentz transformation from counts and light signals alone.</p>
+</div>
+
+</article>
+
+<script>
+/* ── BUDGET SLIDER ── */
+const speedSlider = document.getElementById('speedSlider');
+const speedVal    = document.getElementById('speedVal');
+const motionBar   = document.getElementById('motionBar');
+const internalBar = document.getElementById('internalBar');
+const motionPct   = document.getElementById('motionPct');
+const internalPct = document.getElementById('internalPct');
+const verdict     = document.getElementById('verdict');
+
+function updateBudget() {
+  const beta = speedSlider.value / 100;
+  const motion   = Math.round(beta * 100);
+  const internal = Math.round(Math.sqrt(1 - beta * beta) * 100);
+
+  speedVal.textContent    = `${speedSlider.value}% of c`;
+  motionBar.style.width   = motion + '%';
+  internalBar.style.width = internal + '%';
+  motionPct.textContent   = motion + '%';
+  internalPct.textContent = internal + '%';
+
+  if (beta === 0) {
+    verdict.textContent = 'At rest — full internal capacity. Your chemistry, your clocks, your aging: all running at maximum.';
+  } else if (beta < 0.3) {
+    verdict.textContent = 'Mild motion. Internal dynamics barely affected — this is why everyday speeds feel "normal."';
+  } else if (beta < 0.7) {
+    verdict.textContent = `Moving at ${speedSlider.value}% of c. Internal dynamics running at ${internal}% of maximum. A clock here accumulates fewer ticks.`;
+  } else if (beta < 0.95) {
+    verdict.textContent = `Moving at ${speedSlider.value}% of c. Only ${internal}% of capacity remains for internal dynamics. Significant time dilation.`;
+  } else {
+    verdict.textContent = `Near the speed of light. Only ${internal}% capacity left for internal processes. Almost nothing can happen inside.`;
+  }
+}
+
+speedSlider.addEventListener('input', updateBudget);
+updateBudget();
+
+/* ── PULSE VISUALISATION ── */
+const pulseSlider    = document.getElementById('pulseSlider');
+const pulseSpeedLabel= document.getElementById('pulseSpeedLabel');
+const dotA           = document.getElementById('dotA');
+const dotB           = document.getElementById('dotB');
+const tickAEl        = document.getElementById('tickA');
+const tickBEl        = document.getElementById('tickB');
+const tickRatioEl    = document.getElementById('tickRatio');
+
+let tickA = 0, tickB = 0;
+let posA = 0, posB = 0;
+let lastTime = null;
+const PERIOD_MS = 600; // base period for at-rest clock
+let timeAccA = 0, timeAccB = 0;
+
+function animatePulse(ts) {
+  if (!lastTime) lastTime = ts;
+  const dt = ts - lastTime;
+  lastTime = ts;
+
+  const beta = pulseSlider.value / 100;
+  const gamma_inv = Math.sqrt(1 - beta * beta);
+  pulseSpeedLabel.textContent = `${pulseSlider.value}% c`;
+
+  // Advance time accumulators
+  timeAccA += dt;
+  timeAccB += dt * gamma_inv;
+
+  // Tick when accumulator exceeds period
+  if (timeAccA >= PERIOD_MS) {
+    timeAccA -= PERIOD_MS;
+    tickA++;
+    tickAEl.textContent = tickA;
+  }
+  if (timeAccB >= PERIOD_MS) {
+    timeAccB -= PERIOD_MS;
+    tickB++;
+    tickBEl.textContent = tickB;
+  }
+
+  // Animate dot positions (bouncing left-right)
+  const trackW = document.getElementById('trackA').offsetWidth - 14;
+
+  posA = (posA + dt * 0.12) % (trackW * 2);
+  const xA = posA < trackW ? posA : trackW * 2 - posA;
+  dotA.style.left = xA + 'px';
+
+  posB = (posB + dt * 0.12 * gamma_inv) % (trackW * 2);
+  const xB = posB < trackW ? posB : trackW * 2 - posB;
+  dotB.style.left = xB + 'px';
+
+  // Ratio readout
+  if (tickA > 0) {
+    const ratio = (tickB / tickA * 100).toFixed(1);
+    tickRatioEl.textContent = `Moving clock has accumulated ${ratio}% of the at-rest ticks — ${(100 - ratio).toFixed(1)}% fewer oscillations.`;
+  }
+
+  requestAnimationFrame(animatePulse);
+}
+
+pulseSlider.addEventListener('input', () => {
+  // Reset counts on speed change so difference is clear
+  tickA = 0; tickB = 0;
+  timeAccA = 0; timeAccB = 0;
+  tickAEl.textContent = '0';
+  tickBEl.textContent = '0';
+  tickRatioEl.textContent = '';
+});
+
+requestAnimationFrame(animatePulse);
+</script>
+
+</body>
+</html>
