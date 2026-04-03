@@ -62,4 +62,6 @@ The k-factor is promoted to the operator k̂ = (Ĥ_cm + p̂c)/(mc²). For a dete
 
 ## License
 
-Code: [MIT](LICENSE). Papers © the author.
+**Code** (`computation.py`): [MIT](LICENSE)
+
+**Papers**: [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) — you may reuse and redistribute with appropriate credit to the author (Badriram Rajagopalan) and a link to the Zenodo record.
