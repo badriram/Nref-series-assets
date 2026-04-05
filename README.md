@@ -41,8 +41,6 @@ Produces:
 |------------------------|--------------------------------------------------------------------------------------------------|
 |`fig1_train.svg`        |Einstein train dual-ledger: P’s simultaneous reception vs T’s split receptions                    |
 |`fig2_koperator.svg`    |k-factor operator decomposition — time dilation sector (nonlinear) vs simultaneity sector (linear)|
-|`fig3_visibility.svg`   |Fringe visibility V(L,T) decay at three cesium temperatures; coherence horizon L_C                |
-|`fig4_experiments.svg`  |Experimental baselines vs L_C threshold; current and planned atom interferometers                 |
 |`fig5_blurred_radar.svg`|Blurred radar diagram — sharp counts (classical) vs probability clouds (quantum k̂)                |
 
 -----
