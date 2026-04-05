@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -16,187 +15,187 @@
   --subtle: #5a4e42;
   --highlight: #fff3cd;
 
-/* Dark surface palette — higher contrast than raw –ink */
-–dark-bg: #221c17;
-–dark-text: #f0ebe0;
-–dark-muted: #b8aa98;
-–dark-strong: #f4a06a;
+  /* Dark surface palette — higher contrast than raw --ink */
+  --dark-bg: #221c17;
+  --dark-text: #f0ebe0;
+  --dark-muted: #b8aa98;
+  --dark-strong: #f4a06a;
 }
 
-- { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 /* Force light mode — prevent browser dark-mode override */
 :root { color-scheme: light only; }
 
 body {
-background: var(–cream) !important;
-color: var(–ink) !important;
-font-family: ‘Source Serif 4’, Georgia, serif;
-font-size: 19px;
-line-height: 1.72;
--webkit-font-smoothing: antialiased;
+  background: var(--cream) !important;
+  color: var(--ink) !important;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: var(–accent); color: var(–cream); }
+::selection { background: var(--accent); color: var(--cream); }
 
 /* ── HERO ── */
 .hero {
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-padding: 2rem;
-position: relative;
-overflow: hidden;
-background: var(–cream);
-color: var(–ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+  color: var(--ink);
 }
 
 .hero::before {
-content: ‘’;
-position: absolute;
-inset: 0;
-background:
-radial-gradient(ellipse at 30% 20%, rgba(139,37,0,0.06) 0%, transparent 60%),
-radial-gradient(ellipse at 70% 80%, rgba(139,37,0,0.04) 0%, transparent 50%);
-pointer-events: none;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(139,37,0,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(139,37,0,0.04) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .hero h1 {
-font-family: ‘Playfair Display’, Georgia, serif;
-font-size: clamp(2.8rem, 7vw, 5.5rem);
-font-weight: 900;
-line-height: 1.08;
-max-width: 14ch;
-letter-spacing: -0.02em;
-margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.08;
+  max-width: 14ch;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
 }
 
-.hero h1 em { font-style: italic; color: var(–accent); }
+.hero h1 em { font-style: italic; color: var(--accent); }
 
 .hero .subtitle {
-font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-color: var(–subtle);
-max-width: 38ch;
-font-weight: 300;
-line-height: 1.6;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--subtle);
+  max-width: 38ch;
+  font-weight: 300;
+  line-height: 1.6;
 }
 
 .scroll-hint {
-position: absolute;
-bottom: 2.5rem;
-font-family: ‘JetBrains Mono’, monospace;
-font-size: 0.75rem;
-letter-spacing: 0.15em;
-text-transform: uppercase;
-color: var(–subtle);
-opacity: 0.6;
-animation: pulse 2s ease-in-out infinite;
+  position: absolute;
+  bottom: 2.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--subtle);
+  opacity: 0.6;
+  animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
-0%, 100% { opacity: 0.3; transform: translateY(0); }
-50% { opacity: 0.7; transform: translateY(4px); }
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 0.7; transform: translateY(4px); }
 }
 
 /* ── ARTICLE ── */
 article {
-max-width: 680px;
-margin: 0 auto;
-padding: 0 1.5rem 6rem;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
 }
 
 h2 {
-font-family: ‘Playfair Display’, Georgia, serif;
-font-size: clamp(1.6rem, 4vw, 2.2rem);
-font-weight: 700;
-margin: 4rem 0 1.5rem;
-line-height: 1.25;
-letter-spacing: -0.01em;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  margin: 4rem 0 1.5rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
 }
 
 h2:first-of-type { margin-top: 0; }
 p { margin-bottom: 1.4rem; }
 
 .lead {
-font-size: 1.15rem;
-font-weight: 300;
-color: var(–subtle);
-border-left: 3px solid var(–accent);
-padding-left: 1.2rem;
-margin: 2.5rem 0;
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: var(--subtle);
+  border-left: 3px solid var(--accent);
+  padding-left: 1.2rem;
+  margin: 2.5rem 0;
 }
 
 .callout {
-background: var(–dark-bg);
-color: var(–dark-text);
-padding: 2.2rem 2.5rem;
-margin: 2.5rem -1rem;
-border-radius: 2px;
-font-size: 1.05rem;
-line-height: 1.75;
+  background: var(--dark-bg);
+  color: var(--dark-text);
+  padding: 2.2rem 2.5rem;
+  margin: 2.5rem -1rem;
+  border-radius: 2px;
+  font-size: 1.05rem;
+  line-height: 1.75;
 }
 
-.callout strong { color: var(–dark-strong); }
+.callout strong { color: var(--dark-strong); }
 
 .callout-warm {
-background: var(–warm);
-color: var(–ink);
-padding: 1.8rem 2rem;
-margin: 2.5rem 0;
-border-left: 4px solid var(–accent);
-border-radius: 0 2px 2px 0;
+  background: var(--warm);
+  color: var(--ink);
+  padding: 1.8rem 2rem;
+  margin: 2.5rem 0;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 2px 2px 0;
 }
 
 .equation {
-font-family: ‘JetBrains Mono’, monospace;
-text-align: center;
-font-size: 1.1rem;
-padding: 1.8rem;
-margin: 2rem 0;
-background: var(–warm);
-border-radius: 2px;
-letter-spacing: 0.02em;
+  font-family: 'JetBrains Mono', monospace;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 1.8rem;
+  margin: 2rem 0;
+  background: var(--warm);
+  border-radius: 2px;
+  letter-spacing: 0.02em;
 }
 
 .equation .label {
-display: block;
-font-size: 0.78rem;
-color: var(–subtle);
-margin-top: 0.6rem;
-letter-spacing: 0.08em;
-text-transform: uppercase;
+  display: block;
+  font-size: 0.78rem;
+  color: var(--subtle);
+  margin-top: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .separator {
-text-align: center;
-margin: 3.5rem 0;
-color: var(–accent);
-font-size: 1.4rem;
-letter-spacing: 0.4em;
-opacity: 0.4;
+  text-align: center;
+  margin: 3.5rem 0;
+  color: var(--accent);
+  font-size: 1.4rem;
+  letter-spacing: 0.4em;
+  opacity: 0.4;
 }
 
 .comparison {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 1.5rem;
-margin: 2.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
 }
 
 .comparison > div { padding: 1.5rem; border-radius: 2px; }
-.comparison .old { background: var(–warm); opacity: 0.85; }
-.comparison .new { background: var(–dark-bg); color: var(–dark-text); }
+.comparison .old { background: var(--warm); opacity: 0.85; }
+.comparison .new { background: var(--dark-bg); color: var(--dark-text); }
 
 .comparison .tag {
-font-family: ‘JetBrains Mono’, monospace;
-font-size: 0.7rem;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-margin-bottom: 0.8rem;
-color: var(–dark-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  color: var(--dark-muted);
 }
 
 .comparison p { font-size: 0.95rem; margin-bottom: 0; }
@@ -205,252 +204,327 @@ strong { font-weight: 600; }
 em { font-style: italic; }
 
 .drop-cap::first-letter {
-font-family: ‘Playfair Display’, Georgia, serif;
-font-size: 3.8rem;
-float: left;
-line-height: 0.8;
-padding-right: 0.12em;
-padding-top: 0.08em;
-font-weight: 900;
-color: var(–accent);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.8rem;
+  float: left;
+  line-height: 0.8;
+  padding-right: 0.12em;
+  padding-top: 0.08em;
+  font-weight: 900;
+  color: var(--accent);
 }
 
 .section-num {
-font-family: ‘JetBrains Mono’, monospace;
-font-size: 0.7rem;
-letter-spacing: 0.15em;
-text-transform: uppercase;
-color: var(–accent);
-display: block;
-margin-bottom: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.4rem;
 }
 
 .footnote {
-font-size: 0.88rem;
-color: var(–subtle);
-margin-top: 4rem;
-padding-top: 2rem;
-border-top: 1px solid var(–warm);
+  font-size: 0.88rem;
+  color: var(--subtle);
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--warm);
 }
 
 .footnote p { margin-bottom: 0.8rem; }
 
 .closing {
-text-align: center;
-margin: 5rem 0 3rem;
-padding: 3rem 2rem;
+  text-align: center;
+  margin: 5rem 0 3rem;
+  padding: 3rem 2rem;
 }
 
 .closing p {
-font-family: ‘Playfair Display’, Georgia, serif;
-font-size: clamp(1.3rem, 3vw, 1.7rem);
-font-weight: 400;
-font-style: italic;
-max-width: 32ch;
-margin: 0 auto;
-line-height: 1.5;
-color: var(–accent);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 400;
+  font-style: italic;
+  max-width: 32ch;
+  margin: 0 auto;
+  line-height: 1.5;
+  color: var(--accent);
 }
 
 /* ── BUDGET DEMO ── */
 .demo-block {
-margin: 2.5rem 0;
-background: var(–dark-bg);
-border-radius: 4px;
-padding: 2rem 2rem 1.5rem;
-color: var(–dark-text);
+  margin: 2.5rem 0;
+  background: var(--dark-bg);
+  border-radius: 4px;
+  padding: 2rem 2rem 1.5rem;
+  color: var(--dark-text);
 }
 
 .demo-block .demo-label {
-font-family: ‘JetBrains Mono’, monospace;
-font-size: 0.7rem;
-letter-spacing: 0.15em;
-text-transform: uppercase;
-color: var(–dark-strong);
-margin-bottom: 1.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--dark-strong);
+  margin-bottom: 1.4rem;
 }
 
 .demo-block .slider-row {
-display: flex;
-align-items: center;
-gap: 1rem;
-margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .demo-block label {
-font-family: ‘JetBrains Mono’, monospace;
-font-size: 0.82rem;
-min-width: 9ch;
-color: var(–dark-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  min-width: 9ch;
+  color: var(--dark-muted);
 }
 
 .demo-block input[type=range] {
-flex: 1;
-accent-color: var(–accent-light);
-cursor: pointer;
-height: 4px;
+  flex: 1;
+  accent-color: var(--accent-light);
+  cursor: pointer;
+  height: 4px;
 }
 
 .demo-block .val {
-font-family: ‘JetBrains Mono’, monospace;
-font-size: 0.82rem;
-min-width: 5ch;
-text-align: right;
-color: var(–dark-text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  min-width: 5ch;
+  text-align: right;
+  color: var(--dark-text);
 }
 
 .bars-wrap {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 1rem;
-margin: 1.4rem 0 0.4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.4rem 0 0.4rem;
 }
 
 .bar-item { display: flex; flex-direction: column; gap: 0.4rem; }
 
 .bar-item .bar-label {
-font-family: ‘JetBrains Mono’, monospace;
-font-size: 0.68rem;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-color: var(–dark-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dark-muted);
 }
 
 .bar-track {
-height: 10px;
-background: rgba(255,255,255,0.14);
-border-radius: 2px;
-overflow: hidden;
+  height: 10px;
+  background: rgba(255,255,255,0.14);
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 .bar-fill {
-height: 100%;
-border-radius: 2px;
-transition: width 0.15s ease;
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.15s ease;
 }
 
 .bar-motion .bar-fill { background: #e8622a; }
 .bar-internal .bar-fill { background: #5dbf82; }
 
 .bar-item .bar-pct {
-font-family: ‘JetBrains Mono’, monospace;
-font-size: 0.78rem;
-color: var(–dark-text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--dark-text);
 }
 
 .demo-verdict {
-margin-top: 1.2rem;
-font-size: 0.92rem;
-font-style: italic;
-color: var(–dark-muted);
-min-height: 1.4em;
-transition: color 0.3s;
+  margin-top: 1.2rem;
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--dark-muted);
+  min-height: 1.4em;
+  transition: color 0.3s;
 }
 
 /* ── PULSE VIZ ── */
 .pulse-demo {
-margin: 2.5rem 0;
-background: var(–warm);
-border-radius: 4px;
-padding: 2rem;
-border-left: 4px solid var(–accent);
+  margin: 2.5rem 0;
+  background: var(--warm);
+  border-radius: 4px;
+  padding: 2rem;
+  border-left: 4px solid var(--accent);
 }
 
 .pulse-demo .demo-label {
-font-family: ‘JetBrains Mono’, monospace;
-font-size: 0.7rem;
-letter-spacing: 0.15em;
-text-transform: uppercase;
-color: var(–accent);
-margin-bottom: 1.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.4rem;
 }
 
 .pulse-row {
-display: flex;
-align-items: center;
-gap: 1.2rem;
-margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
 }
 
 .pulse-row .p-label {
-font-family: ‘JetBrains Mono’, monospace;
-font-size: 0.8rem;
-min-width: 7ch;
-color: var(–subtle);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  min-width: 7ch;
+  color: var(--subtle);
 }
 
 .pulse-track {
-flex: 1;
-height: 32px;
-background: white;
-border-radius: 3px;
-position: relative;
-overflow: hidden;
+  flex: 1;
+  height: 32px;
+  background: white;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
 }
 
 .pulse-dot {
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-width: 10px;
-height: 10px;
-border-radius: 50%;
-background: var(–accent);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
 .pulse-speed-control {
-display: flex;
-align-items: center;
-gap: 1rem;
-margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .pulse-speed-control label {
-font-family: ‘JetBrains Mono’, monospace;
-font-size: 0.78rem;
-color: var(–subtle);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--subtle);
 }
 
 .pulse-speed-control input[type=range] {
-flex: 1;
-accent-color: var(–accent);
-cursor: pointer;
+  flex: 1;
+  accent-color: var(--accent);
+  cursor: pointer;
 }
 
 .pulse-ticks {
-font-family: ‘JetBrains Mono’, monospace;
-font-size: 0.78rem;
-color: var(–subtle);
-margin-top: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--subtle);
+  margin-top: 0.8rem;
 }
 
 .tick-counts {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 0.5rem;
-margin-top: 0.4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
 }
 
 .tick-count {
-font-family: ‘JetBrains Mono’, monospace;
-font-size: 0.82rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
 }
 
 .tick-count span {
-font-size: 1.1rem;
-font-weight: 500;
-color: var(–accent-light);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--accent-light);
+}
+
+/* ── γ CURVE ── */
+.gamma-canvas-wrap {
+  margin-top: 1.4rem;
+  position: relative;
+}
+.gamma-canvas-wrap canvas {
+  width: 100%;
+  height: 140px;
+  border-radius: 2px;
+  display: block;
+}
+.gamma-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--dark-muted);
+  margin-top: 0.3rem;
+}
+
+/* ── CLOCK DEMOS ── */
+.clock-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.clock-card {
+  background: var(--warm);
+  border-radius: 4px;
+  padding: 1rem;
+  border-top: 3px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.clock-card .c-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.clock-card canvas {
+  width: 100%;
+  height: 100px;
+  display: block;
+  border-radius: 2px;
+  background: white;
+}
+.clock-card .c-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--subtle);
+  min-height: 1.2em;
+}
+
+.clock-speed-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1rem;
+  background: var(--warm);
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+}
+.clock-speed-row label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--subtle);
+  white-space: nowrap;
+}
+.clock-speed-row input { flex: 1; accent-color: var(--accent); }
+.clock-speed-row .cspeed-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--ink);
+  min-width: 5ch;
 }
 
 @media (max-width: 600px) {
-body { font-size: 17px; }
-.comparison { grid-template-columns: 1fr; }
-.callout { margin: 2rem -0.5rem; padding: 1.5rem; }
-article { padding: 0 1.2rem 4rem; }
-.bars-wrap { grid-template-columns: 1fr; }
+  .clock-grid { grid-template-columns: 1fr; }
 }
 </style>
-
 </head>
 <body>
 
@@ -463,7 +537,6 @@ article { padding: 0 1.2rem 4rem; }
 <article>
 
 <span class="section-num">The standard story</span>
-
 <h2>You Don't Need Spacetime to Get Here</h2>
 
 <p class="drop-cap">You've been told a story. It goes like this: there is a thing called spacetime. It is a fabric, a manifold, a four-dimensional arena. When you move fast, spacetime warps around you, and time — whatever that is — slows down. When you stand near something massive, spacetime curves, and time slows down again. Nobody can tell you what time actually is. But they can tell you it dilates.</p>
@@ -477,7 +550,6 @@ article { padding: 0 1.2rem 4rem; }
 <div class="separator">• • •</div>
 
 <span class="section-num">The simple version</span>
-
 <h2>What a Second Actually Is</h2>
 
 <p>A second is not a unit of time. A second is 9,192,631,770 oscillations of a cesium-133 atom. That's the definition. Not a metaphor. Not a simplification. The official, internationally agreed-upon definition of one second is a count of physical events happening inside an atom.</p>
@@ -495,7 +567,6 @@ No "time" needed. A physical process is constrained. That's what was measured. T
 <div class="separator">• • •</div>
 
 <span class="section-num">The constraint</span>
-
 <h2>There Is a Fixed Budget</h2>
 
 <p>Here is the fact that changes everything: every physical system has a fixed total capacity — shared between moving through space and running its internal machinery. The speed of light is what 100% capacity in one direction looks like. You cannot exceed it because there is no remaining capacity to deploy.</p>
@@ -510,7 +581,6 @@ No "time" needed. A physical process is constrained. That's what was measured. T
 </div>
 
 <!-- ── INTERACTIVE BUDGET DEMO ── -->
-
 <div class="demo-block">
   <div class="demo-label">▸ Interactive — drag to see the trade-off</div>
 
@@ -533,6 +603,16 @@ No "time" needed. A physical process is constrained. That's what was measured. T
     </div>
   </div>
 
+  <!-- γ curve -->
+  <div class="gamma-canvas-wrap">
+    <canvas id="gammaCanvas" height="140"></canvas>
+    <div class="gamma-labels">
+      <span>v = 0</span>
+      <span style="margin-left:auto">— internal rate (1/γ) &nbsp;&nbsp; — Lorentz factor γ</span>
+      <span>v = c</span>
+    </div>
+  </div>
+
   <div class="demo-verdict" id="verdict">At rest — full internal capacity. Your chemistry, your clocks, your aging: all running at maximum.</div>
 </div>
 
@@ -543,13 +623,11 @@ No "time" needed. A physical process is constrained. That's what was measured. T
 <div class="separator">• • •</div>
 
 <span class="section-num">Watch it happen</span>
-
 <h2>Internal Dynamics, Slowing Down</h2>
 
 <p>The slowing isn't abstract. Every oscillation that doesn't happen is a tick that doesn't register. Drag the speed up and watch the two clocks diverge — the moving one accumulates fewer counts over the same elapsed wall time.</p>
 
 <!-- ── PULSE VISUALISATION ── -->
-
 <div class="pulse-demo">
   <div class="demo-label">▸ Interactive — compare tick accumulation</div>
 
@@ -585,7 +663,6 @@ No "time" needed. A physical process is constrained. That's what was measured. T
 <div class="separator">• • •</div>
 
 <span class="section-num">An unfinished revolution</span>
-
 <h2>Bondi Almost Got There in 1964</h2>
 
 <p>Hermann Bondi — one of the sharpest mathematical physicists of the twentieth century — did something quietly remarkable in 1964. He derived the complete Lorentz transformation from two primitives only: clock readings and light signals. No manifold. No metric. No synchronisation convention. Just counts and light.</p>
@@ -604,7 +681,6 @@ The question "do we actually need the manifold as a starting point, or does it f
 <div class="separator">• • •</div>
 
 <span class="section-num">Why it feels so real</span>
-
 <h2>The Experience Is Not the Entity</h2>
 
 <p>Here is the most natural objection to everything above: time is the most immediate thing in human experience. You live in the present moment. You remember your past. You anticipate your future. Time doesn't feel like an abstraction — it feels like the medium of existence itself.</p>
@@ -626,7 +702,6 @@ What isn't required is a substance, a dimension, or an arena called time that ex
 <div class="separator">• • •</div>
 
 <span class="section-num">This is not a metaphor</span>
-
 <h2>The Equation That Proves It</h2>
 
 <p>In 2015, a team led by Igor Pikovski published a paper in <em>Nature Physics</em> showing exactly how this works at the quantum level. The Pikovski Hamiltonian describes how a composite system's internal energy changes with velocity:</p>
@@ -642,8 +717,76 @@ H ≈ γmc² + Ĥ₀/γ
 
 <div class="separator">• • •</div>
 
-<span class="section-num">The examples</span>
+<span class="section-num">It doesn't matter what clock you use</span>
+<h2>The Constraint Is Universal</h2>
 
+<p>A natural objection: isn't this circular? The argument rests on the cesium second — a definition that uses internal oscillations of a composite system. Of course the Pikovski Hamiltonian suppresses it; the SI chose a clock whose mechanism is exactly what the equation describes. Would the argument survive a different definition of "one second"?</p>
+
+<p>Yes. And the proof is clean.</p>
+
+<p>Take three clocks with completely different mechanisms and ask what happens to each under motion:</p>
+
+<!-- shared speed control -->
+<div class="clock-speed-row">
+  <label>Clock speed:</label>
+  <input type="range" id="clockSpeedSlider" min="0" max="95" value="0" step="5">
+  <span class="cspeed-val" id="clockSpeedVal">0% c</span>
+</div>
+
+<div class="clock-grid">
+  <div class="clock-card">
+    <div class="c-title">Light-bounce clock</div>
+    <canvas id="lightCanvas" height="100"></canvas>
+    <div class="c-count" id="lightCount">Ticks: 0</div>
+  </div>
+  <div class="clock-card">
+    <div class="c-title">Radioactive decay</div>
+    <canvas id="decayCanvas" height="100"></canvas>
+    <div class="c-count" id="decayCount">Decays: 0</div>
+  </div>
+  <div class="clock-card">
+    <div class="c-title">Pendulum clock</div>
+    <canvas id="pendulumCanvas" height="100"></canvas>
+    <div class="c-count" id="pendulumCount">Ticks: 0</div>
+  </div>
+</div>
+
+<p>Three mechanisms. Three derivations. One result. All three clocks slow by exactly 1/γ — and the rate shown on each is identical to the internal dynamics bar above.</p>
+
+<div class="callout">
+<strong>The corollary that closes the argument.</strong><br><br>
+A clock whose tick rate does <em>not</em> transform as 1/γ under motion would be a detector of absolute velocity — you could use it to determine which frame is "really" at rest. Its existence would falsify special relativity.<br><br>
+The 1/γ suppression of internal dynamics is not a consequence of choosing a convenient clock. It is a consequence of there being no absolute velocity to detect. The constraint is universal because the universe doesn't have a preferred frame. Physics leaves no room for escape.
+</div>
+
+<p>The cesium definition didn't create the constraint. It just made it visible in the most direct possible way — by defining time through the very process that the constraint acts on. Swap in any other clock and the same suppression appears, through whatever mechanism that clock happens to use.</p>
+
+<div class="separator">• • •</div>
+
+<span class="section-num">When clocks go quantum</span>
+<h2>The Two Sectors Don't Behave the Same</h2>
+
+<p>The k-calculus derivation treats clocks as sharp — precise positions, precise momenta, precise readings. That's the classical limit. What happens when the clocks are quantum systems, in genuine superpositions of momentum states?</p>
+
+<p>This is what Paper 2 works out, and the result is asymmetric in a way that turns out to be physically deep.</p>
+
+<p>The Lorentz transformation has two sectors. The time dilation sector (k + 1/k = 2γ) depends on energy — and energy is a nonlinear function of momentum through the mass-shell relation. The simultaneity sector (k − 1/k = 2βγ) depends on momentum directly, which is linear.</p>
+
+<div class="callout-warm">
+<strong>The asymmetry.</strong> For a detector in a quantum superposition of momenta, the time dilation sector acquires quantum corrections — because nonlinear functions of a superposition don't average cleanly. The simultaneity sector is protected — because linear functions of a symmetric superposition average to exactly the classical value, with zero correction to leading order.<br><br>
+The two halves of the same transformation respond differently to quantum mechanics. Not because the physics is different — because linearity and nonlinearity behave differently under superposition.
+</div>
+
+<p>Both sectors decohere — but at rates amplified by different baselines. The time dilation sector decoheres against a temporal baseline. The simultaneity sector decoheres against a spatial one. For an atom interferometer with arm separation L, the fringe visibility decays as:</p>
+
+<div class="equation">
+V(L) = exp(−(ω₀σ_pL / mc²)² / 2)
+<span class="label">Visibility decay — simultaneity sector decoherence. L_C ≈ 7.3 km for cold cesium at 1 μK</span>
+</div>
+
+<div class="separator">• • •</div>
+
+<span class="section-num">The examples</span>
 <h2>You Already Know This Is True</h2>
 
 <p>Every conversion between motion and internal energy confirms the budget picture.</p>
@@ -659,7 +802,6 @@ H ≈ γmc² + Ĥ₀/γ
 <div class="separator">• • •</div>
 
 <span class="section-num">Gravity</span>
-
 <h2>The Same Story Explains Gravitational Time Dilation</h2>
 
 <p>Clocks tick slower near massive objects. The budget picture says: the metric tensor — the mathematical object that describes gravity in general relativity — is not a geometric stage. It is a resource allocator. It distributes the available internal-dynamics capacity differently at different locations.</p>
@@ -676,7 +818,6 @@ dτ = dt × √(1 − 2GM/rc²)
 <div class="separator">• • •</div>
 
 <span class="section-num">The twin paradox</span>
-
 <h2>There Was Never a Paradox</h2>
 
 <p>One twin travels at high speed and returns younger than the twin who stayed home. The budget picture dissolves it. The traveling twin's internal machinery was running at reduced capacity during the journey — fewer oscillations, fewer chemical reactions, fewer state changes accumulated. The stay-at-home twin's machinery ran at full capacity.</p>
@@ -686,7 +827,6 @@ dτ = dt × √(1 − 2GM/rc²)
 <div class="separator">• • •</div>
 
 <span class="section-num">What time actually is</span>
-
 <h2>Time Is a Label, Not a Thing</h2>
 
 <p>In 1983, Don Page and William Wootters showed something remarkable. Take a quantum system that is globally static — nothing changes, nothing evolves. Split it into two entangled subsystems. From inside one subsystem, looking at the other, it appears to evolve. Time emerges from entanglement correlations in a system where nothing is "happening" globally.</p>
@@ -711,7 +851,6 @@ dτ = dt × √(1 − 2GM/rc²)
 <div class="separator">• • •</div>
 
 <span class="section-num">What changes</span>
-
 <h2>Why This Matters</h2>
 
 <p><strong>Time travel is not a physics problem.</strong> It's a mathematical artifact. The equations of general relativity admit solutions with closed timelike curves. But those solutions exist because the mathematics uses a number line that admits loops. Physical counting processes don't loop. A clock transported along such a curve keeps ticking forward — accumulating oscillations, never revisiting a previous count.</p>
@@ -727,7 +866,6 @@ dτ = dt × √(1 − 2GM/rc²)
 <div class="separator">• • •</div>
 
 <span class="section-num">The bottom line</span>
-
 <h2>The Simplest Version</h2>
 
 <p>There is a fixed total capacity. The speed of light is what 100% of that capacity in one direction looks like. Everything that exists divides this capacity between moving through space and running its internal machinery.</p>
@@ -740,6 +878,8 @@ dτ = dt × √(1 − 2GM/rc²)
 
 <p>The word "time" was never needed. There are internal dynamics. There is a capacity. There is a constraint. Spacetime is a useful map of how those constraints relate — not the territory itself. The rest is a label we attached to the experience of being a physical system that counts its own oscillations.</p>
 
+<p>Einstein in 1905 showed that simultaneity — which had seemed absolute — was relative to the observer. This framework takes the next step: the temporal parameter itself, which had seemed to be the neutral arena in which physics happens, is also relative — a label attached to a counting process, not an independent entity. The argument extends Einstein's 1905 relativization of simultaneity to the temporal parameter itself.</p>
+
 <p>The equations knew this all along. The Pikovski Hamiltonian says it in one line: Ĥ₀/γ. Internal dynamics, multiplied by the Lorentz factor. As you speed up, your insides slow down. Not because time changes. Because you have less capacity to be.</p>
 
 <section class="closing">
@@ -747,124 +887,467 @@ dτ = dt × √(1 − 2GM/rc²)
 </section>
 
 <div class="footnote">
-  <p><strong>Based on:</strong> "Surplus Structure in the Temporal Parameter: Consequences of the Mass-Shell Constraint and the PaW-Pikovski Equivalence" (Rajagopalan, 2026). The technical paper establishes that three properties of the mathematical temporal parameter — negative extension, loop-admitting topology, and reversal symmetry — are surplus structure: present in the formalism, absent from physics. The full Lorentz transformation is derived from counts and light signals alone, without importing a spacetime manifold.</p>
+  <p><strong>Based on:</strong> Two papers by Badriram Rajagopalan (2026). Paper 1 establishes that three properties of the mathematical temporal parameter — negative extension, loop-admitting topology, and reversal symmetry — are surplus structure: present in the formalism, absent from physics. The full Lorentz transformation is derived from counts and light signals alone, extending Einstein's 1905 relativization of simultaneity to the temporal parameter itself. Paper 2 promotes the Bondi k-factor to a quantum operator and derives the sector decomposition of relativistic proper time: the time dilation sector acquires quantum corrections while the simultaneity sector is protected, producing a testable interferometer prediction.</p>
 
   <p><strong>Read the papers:</strong><br>
-  Paper 1 — <a href="https://doi.org/10.5281/zenodo.19386819" style="color:var(--accent)">Surplus Structure in the Temporal Parameter</a> (doi:10.5281/zenodo.19386819)<br>
-  Paper 2 — <a href="https://doi.org/10.5281/zenodo.19387399" style="color:var(--accent)">The Bondi k-Factor as Quantum Operator: Sector Decomposition of Relativistic Proper Time</a> (doi:10.5281/zenodo.19387399)</p>
+  Paper 1 — <a href="https://doi.org/10.5281/zenodo.19386819" style="color:var(--accent)">Surplus Structure in the Temporal Parameter: Consequences of the Mass-Shell Constraint and the PaW-Pikovski Equivalence</a><br>
+  Paper 2 — <a href="https://doi.org/10.5281/zenodo.19387399" style="color:var(--accent)">The Bondi k-Factor as Quantum Operator: Sector Decomposition of Relativistic Proper Time</a></p>
   <p><strong>Key references:</strong> Pikovski et al., <em>Nature Physics</em> 11, 668 (2015). Smith & Ahmadi, <em>Nature Communications</em> 11, 5360 (2020). Page & Wootters, <em>Physical Review D</em> 27, 2885 (1983). Moreva et al., <em>Physical Review A</em> 89, 052122 (2014). Favalli & Smerzi, <em>Entropy</em> 27(5), 489 (2025). Bondi, <em>Relativity and Common Sense</em> (1964) — the k-calculus derivation of the Lorentz transformation from counts and light signals alone.</p>
 </div>
 
 </article>
 
 <script>
-/* ── BUDGET SLIDER ── */
-const speedSlider = document.getElementById('speedSlider');
-const speedVal    = document.getElementById('speedVal');
-const motionBar   = document.getElementById('motionBar');
-const internalBar = document.getElementById('internalBar');
-const motionPct   = document.getElementById('motionPct');
-const internalPct = document.getElementById('internalPct');
-const verdict     = document.getElementById('verdict');
+/* ══════════════════════════════════════════
+   BUDGET SLIDER + γ CURVE
+══════════════════════════════════════════ */
+const speedSlider  = document.getElementById('speedSlider');
+const speedVal     = document.getElementById('speedVal');
+const motionBar    = document.getElementById('motionBar');
+const internalBar  = document.getElementById('internalBar');
+const motionPct    = document.getElementById('motionPct');
+const internalPct  = document.getElementById('internalPct');
+const verdict      = document.getElementById('verdict');
+const gammaCanvas  = document.getElementById('gammaCanvas');
+const gammaCtx     = gammaCanvas.getContext('2d');
+
+function drawGammaCurve(betaCurrent) {
+  const W = gammaCanvas.offsetWidth * devicePixelRatio;
+  const H = 140 * devicePixelRatio;
+  gammaCanvas.width  = W;
+  gammaCanvas.height = H;
+  const ctx = gammaCtx;
+  const pad = { l: 40 * devicePixelRatio, r: 10 * devicePixelRatio,
+                t: 10 * devicePixelRatio, b: 24 * devicePixelRatio };
+  const w = W - pad.l - pad.r;
+  const h = H - pad.t - pad.b;
+  const GAMMA_MAX = 8;
+
+  ctx.clearRect(0, 0, W, H);
+
+  // background
+  ctx.fillStyle = 'rgba(255,255,255,0.04)';
+  ctx.fillRect(pad.l, pad.t, w, h);
+
+  // grid lines
+  ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+  ctx.lineWidth = 1;
+  [0.25, 0.5, 0.75, 1].forEach(f => {
+    const y = pad.t + h * (1 - f / GAMMA_MAX * (GAMMA_MAX > 1 ? 1 : 1));
+    ctx.beginPath(); ctx.moveTo(pad.l, pad.t + h * (1 - f)); ctx.lineTo(pad.l + w, pad.t + h * (1 - f));
+    ctx.stroke();
+  });
+
+  // γ axis label
+  ctx.fillStyle = 'rgba(240,235,224,0.45)';
+  ctx.font = `${9 * devicePixelRatio}px JetBrains Mono, monospace`;
+  ctx.textAlign = 'right';
+  ctx.fillText('γ = ' + GAMMA_MAX, pad.l - 4 * devicePixelRatio, pad.t + 4 * devicePixelRatio);
+  ctx.fillText('1', pad.l - 4 * devicePixelRatio, pad.t + h);
+
+  const bToX = b => pad.l + b * w;
+  const gammaToY = g => pad.t + h * (1 - Math.min(g, GAMMA_MAX) / GAMMA_MAX);
+  const internalToY = r => pad.t + h * (1 - r);
+
+  // Draw internal rate curve (1/γ) — green
+  ctx.beginPath();
+  ctx.strokeStyle = '#5dbf82';
+  ctx.lineWidth = 2 * devicePixelRatio;
+  for (let i = 0; i <= 300; i++) {
+    const b = (i / 300) * 0.999;
+    const rate = Math.sqrt(1 - b * b);
+    const x = bToX(b);
+    const y = internalToY(rate);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+
+  // Draw γ curve — orange
+  ctx.beginPath();
+  ctx.strokeStyle = '#e8622a';
+  ctx.lineWidth = 2 * devicePixelRatio;
+  for (let i = 0; i <= 300; i++) {
+    const b = (i / 300) * 0.999;
+    const g = 1 / Math.sqrt(1 - b * b);
+    const x = bToX(b);
+    const y = gammaToY(g);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+
+  // Current position marker
+  const beta = betaCurrent / 100;
+  const gCur = 1 / Math.sqrt(1 - beta * beta);
+  const rCur = Math.sqrt(1 - beta * beta);
+  const xCur = bToX(beta);
+
+  // vertical guide
+  ctx.setLineDash([3 * devicePixelRatio, 3 * devicePixelRatio]);
+  ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+  ctx.lineWidth = 1.5 * devicePixelRatio;
+  ctx.beginPath(); ctx.moveTo(xCur, pad.t); ctx.lineTo(xCur, pad.t + h); ctx.stroke();
+  ctx.setLineDash([]);
+
+  // dots
+  [[gammaToY(gCur), '#e8622a'], [internalToY(rCur), '#5dbf82']].forEach(([y, col]) => {
+    ctx.beginPath();
+    ctx.arc(xCur, y, 5 * devicePixelRatio, 0, Math.PI * 2);
+    ctx.fillStyle = col;
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,0.6)';
+    ctx.lineWidth = 1.5 * devicePixelRatio;
+    ctx.stroke();
+  });
+
+  // γ value label
+  if (gCur < GAMMA_MAX - 0.5) {
+    ctx.fillStyle = '#e8622a';
+    ctx.font = `bold ${9 * devicePixelRatio}px JetBrains Mono, monospace`;
+    ctx.textAlign = 'left';
+    ctx.fillText('γ = ' + gCur.toFixed(2), xCur + 6 * devicePixelRatio, gammaToY(gCur) - 4 * devicePixelRatio);
+  }
+}
 
 function updateBudget() {
   const beta = speedSlider.value / 100;
   const motion   = Math.round(beta * 100);
   const internal = Math.round(Math.sqrt(1 - beta * beta) * 100);
+  const gamma    = (1 / Math.sqrt(1 - beta * beta));
 
-  speedVal.textContent    = `${speedSlider.value}% of c`;
+  speedVal.textContent    = `${speedSlider.value}% of c  (γ = ${gamma.toFixed(2)})`;
   motionBar.style.width   = motion + '%';
   internalBar.style.width = internal + '%';
   motionPct.textContent   = motion + '%';
   internalPct.textContent = internal + '%';
 
   if (beta === 0) {
-    verdict.textContent = 'At rest — full internal capacity. Your chemistry, your clocks, your aging: all running at maximum.';
+    verdict.textContent = 'At rest — γ = 1. Full internal capacity. Your chemistry, your clocks, your aging: all at maximum.';
   } else if (beta < 0.3) {
-    verdict.textContent = 'Mild motion. Internal dynamics barely affected — this is why everyday speeds feel "normal."';
+    verdict.textContent = `γ = ${gamma.toFixed(3)} — mild effect. Internal dynamics at ${internal}%. Everyday speeds barely register.`;
   } else if (beta < 0.7) {
-    verdict.textContent = `Moving at ${speedSlider.value}% of c. Internal dynamics running at ${internal}% of maximum. A clock here accumulates fewer ticks.`;
+    verdict.textContent = `γ = ${gamma.toFixed(2)} — significant. Internal dynamics at ${internal}% of rest-frame rate. Notice how γ begins to curve sharply.`;
   } else if (beta < 0.95) {
-    verdict.textContent = `Moving at ${speedSlider.value}% of c. Only ${internal}% of capacity remains for internal dynamics. Significant time dilation.`;
+    verdict.textContent = `γ = ${gamma.toFixed(2)} — strong dilation. Only ${internal}% internal capacity remains. The γ curve is rising steeply.`;
   } else {
-    verdict.textContent = `Near the speed of light. Only ${internal}% capacity left for internal processes. Almost nothing can happen inside.`;
+    verdict.textContent = `γ = ${gamma.toFixed(1)} — extreme. Only ${internal}% internal capacity left. Near c, tiny speed increases produce enormous γ.`;
   }
+
+  drawGammaCurve(+speedSlider.value);
 }
 
 speedSlider.addEventListener('input', updateBudget);
+window.addEventListener('resize', () => drawGammaCurve(+speedSlider.value));
 updateBudget();
 
-/* ── PULSE VISUALISATION ── */
-const pulseSlider    = document.getElementById('pulseSlider');
-const pulseSpeedLabel= document.getElementById('pulseSpeedLabel');
-const dotA           = document.getElementById('dotA');
-const dotB           = document.getElementById('dotB');
-const tickAEl        = document.getElementById('tickA');
-const tickBEl        = document.getElementById('tickB');
-const tickRatioEl    = document.getElementById('tickRatio');
+/* ══════════════════════════════════════════
+   PULSE VISUALISATION (tick accumulation)
+══════════════════════════════════════════ */
+const pulseSlider     = document.getElementById('pulseSlider');
+const pulseSpeedLabel = document.getElementById('pulseSpeedLabel');
+const dotA            = document.getElementById('dotA');
+const dotB            = document.getElementById('dotB');
+const tickAEl         = document.getElementById('tickA');
+const tickBEl         = document.getElementById('tickB');
+const tickRatioEl     = document.getElementById('tickRatio');
 
 let tickA = 0, tickB = 0;
 let posA = 0, posB = 0;
-let lastTime = null;
-const PERIOD_MS = 600; // base period for at-rest clock
+let lastTimePulse = null;
+const PERIOD_MS = 600;
 let timeAccA = 0, timeAccB = 0;
 
 function animatePulse(ts) {
-  if (!lastTime) lastTime = ts;
-  const dt = ts - lastTime;
-  lastTime = ts;
-
+  if (!lastTimePulse) lastTimePulse = ts;
+  const dt = ts - lastTimePulse;
+  lastTimePulse = ts;
   const beta = pulseSlider.value / 100;
   const gamma_inv = Math.sqrt(1 - beta * beta);
   pulseSpeedLabel.textContent = `${pulseSlider.value}% c`;
-
-  // Advance time accumulators
-  timeAccA += dt;
-  timeAccB += dt * gamma_inv;
-
-  // Tick when accumulator exceeds period
-  if (timeAccA >= PERIOD_MS) {
-    timeAccA -= PERIOD_MS;
-    tickA++;
-    tickAEl.textContent = tickA;
-  }
-  if (timeAccB >= PERIOD_MS) {
-    timeAccB -= PERIOD_MS;
-    tickB++;
-    tickBEl.textContent = tickB;
-  }
-
-  // Animate dot positions (bouncing left-right)
+  timeAccA += dt; timeAccB += dt * gamma_inv;
+  if (timeAccA >= PERIOD_MS) { timeAccA -= PERIOD_MS; tickA++; tickAEl.textContent = tickA; }
+  if (timeAccB >= PERIOD_MS) { timeAccB -= PERIOD_MS; tickB++; tickBEl.textContent = tickB; }
   const trackW = document.getElementById('trackA').offsetWidth - 14;
-
   posA = (posA + dt * 0.12) % (trackW * 2);
-  const xA = posA < trackW ? posA : trackW * 2 - posA;
-  dotA.style.left = xA + 'px';
-
+  dotA.style.left = (posA < trackW ? posA : trackW * 2 - posA) + 'px';
   posB = (posB + dt * 0.12 * gamma_inv) % (trackW * 2);
-  const xB = posB < trackW ? posB : trackW * 2 - posB;
-  dotB.style.left = xB + 'px';
-
-  // Ratio readout
+  dotB.style.left = (posB < trackW ? posB : trackW * 2 - posB) + 'px';
   if (tickA > 0) {
     const ratio = (tickB / tickA * 100).toFixed(1);
-    tickRatioEl.textContent = `Moving clock has accumulated ${ratio}% of the at-rest ticks — ${(100 - ratio).toFixed(1)}% fewer oscillations.`;
+    tickRatioEl.textContent = `Moving clock: ${ratio}% of at-rest ticks — ${(100 - ratio).toFixed(1)}% fewer oscillations.`;
   }
-
   requestAnimationFrame(animatePulse);
 }
 
 pulseSlider.addEventListener('input', () => {
-  // Reset counts on speed change so difference is clear
-  tickA = 0; tickB = 0;
-  timeAccA = 0; timeAccB = 0;
-  tickAEl.textContent = '0';
-  tickBEl.textContent = '0';
-  tickRatioEl.textContent = '';
+  tickA = 0; tickB = 0; timeAccA = 0; timeAccB = 0;
+  tickAEl.textContent = '0'; tickBEl.textContent = '0'; tickRatioEl.textContent = '';
+});
+requestAnimationFrame(animatePulse);
+
+/* ══════════════════════════════════════════
+   THREE CLOCK ANIMATIONS
+══════════════════════════════════════════ */
+const clockSpeedSlider = document.getElementById('clockSpeedSlider');
+const clockSpeedVal    = document.getElementById('clockSpeedVal');
+const lightCanvas      = document.getElementById('lightCanvas');
+const decayCanvas      = document.getElementById('decayCanvas');
+const pendulumCanvas   = document.getElementById('pendulumCanvas');
+const lightCount       = document.getElementById('lightCount');
+const decayCount       = document.getElementById('decayCount');
+const pendulumCount    = document.getElementById('pendulumCount');
+
+// shared state
+let clockBeta = 0;
+let lightTicks = 0, decayTicks = 0, pendTicks = 0;
+let lastClockTs = null;
+
+// light clock state — managed inside drawLightClock
+let lightDir = 1, lightPos = 0, lightTrail = [];
+// decay state
+const NUM_ATOMS = 24;
+let atoms = Array.from({length: NUM_ATOMS}, (_, i) => ({
+  x: (i % 6) / 5, y: Math.floor(i / 6) / 3,
+  decayed: false, timer: Math.random() * 3000
+}));
+let decayTimeAcc = 0;
+// pendulum state
+let pendAngle = Math.PI / 5, pendVel = 0, pendAcc = 0;
+const PEND_G = 0.008; // pixels/ms^2 equivalent
+let pendTimeAcc = 0, pendLastDir = 1;
+
+function resizeClockCanvas(c) {
+  const dpr = devicePixelRatio;
+  c.width  = c.offsetWidth  * dpr;
+  c.height = c.offsetHeight * dpr;
+}
+
+function drawLightClock(dt, beta) {
+  const c    = lightCanvas;
+  const ctx  = c.getContext('2d');
+  const W = c.width, H = c.height;
+  const dpr = devicePixelRatio;
+  const gamma_inv = Math.sqrt(1 - beta * beta);
+  const mirrorY1 = H * 0.12, mirrorY2 = H * 0.88;
+  const cx = W / 2;
+  const mirrorW = W * 0.7;
+  const travelH = mirrorY2 - mirrorY1;
+
+  // advance photon — speed slows by gamma_inv (longer diagonal path)
+  const speed = (travelH / 700) * gamma_inv;
+  lightPos += dt * speed;
+
+  // lateral offset per leg to show diagonal path
+  const maxLateral = beta * W * 0.28;
+
+  // check mirror bounce
+  if (lightPos >= travelH) {
+    lightPos -= travelH;
+    lightDir *= -1;
+    lightTicks++;
+    lightCount.textContent = `Round trips: ${lightTicks}  (1/γ = ${gamma_inv.toFixed(2)})`;
+    // record bounce point for trail
+    const bounceY = lightDir === -1 ? mirrorY2 : mirrorY1;
+    const bounceX = cx + (lightDir === -1 ? maxLateral : -maxLateral);
+    lightTrail.push({x: bounceX, y: bounceY});
+    if (lightTrail.length > 6) lightTrail.shift();
+  }
+
+  // current photon screen position
+  const frac = lightPos / travelH;
+  let py, px;
+  if (lightDir === 1) {
+    // going down: top-left → bottom-right
+    py = mirrorY1 + frac * travelH;
+    px = cx - maxLateral + frac * maxLateral * 2;
+  } else {
+    // going up: bottom-right → top-left
+    py = mirrorY2 - frac * travelH;
+    px = cx + maxLateral - frac * maxLateral * 2;
+  }
+
+  ctx.clearRect(0, 0, W, H);
+
+  // mirrors
+  ctx.fillStyle = '#8b2500';
+  ctx.fillRect(cx - mirrorW / 2, mirrorY1 - 3 * dpr, mirrorW, 5 * dpr);
+  ctx.fillRect(cx - mirrorW / 2, mirrorY2 - 2 * dpr, mirrorW, 5 * dpr);
+
+  // draw zigzag trail
+  if (lightTrail.length > 0) {
+    ctx.beginPath();
+    ctx.moveTo(lightTrail[0].x, lightTrail[0].y);
+    lightTrail.forEach(p => ctx.lineTo(p.x, p.y));
+    ctx.lineTo(px, py);
+    ctx.strokeStyle = 'rgba(200,150,50,0.25)';
+    ctx.lineWidth = 1.5 * dpr;
+    ctx.stroke();
+  }
+
+  // photon glow
+  const grad = ctx.createRadialGradient(px, py, 0, px, py, 8 * dpr);
+  grad.addColorStop(0, 'rgba(255,220,80,0.95)');
+  grad.addColorStop(1, 'rgba(255,180,0,0)');
+  ctx.beginPath(); ctx.arc(px, py, 8 * dpr, 0, Math.PI * 2);
+  ctx.fillStyle = grad; ctx.fill();
+
+  // label
+  ctx.fillStyle = 'rgba(107,94,80,0.7)';
+  ctx.font = `${8 * dpr}px JetBrains Mono, monospace`;
+  ctx.textAlign = 'center';
+  const msg = beta > 0.05 ? 'diagonal path → longer → slower' : 'straight bounce';
+  ctx.fillText(msg, cx, H - 3 * dpr);
+}
+
+function drawDecayClock(dt, beta) {
+  const c   = decayCanvas;
+  const ctx = c.getContext('2d');
+  const W = c.width, H = c.height;
+  const dpr = devicePixelRatio;
+  const gamma_inv = Math.sqrt(1 - beta * beta);
+
+  ctx.clearRect(0, 0, W, H);
+
+  // decay rate
+  decayTimeAcc += dt * gamma_inv;
+  const baseDecayInterval = 400; // ms per decay at rest
+  while (decayTimeAcc >= baseDecayInterval) {
+    decayTimeAcc -= baseDecayInterval;
+    const alive = atoms.filter(a => !a.decayed);
+    if (alive.length > 0) {
+      const idx = Math.floor(Math.random() * alive.length);
+      alive[idx].decayed = true;
+      decayTicks++;
+      decayCount.textContent = `Decays: ${decayTicks}  (rate × ${gamma_inv.toFixed(2)})`;
+    } else {
+      // reset
+      atoms.forEach(a => a.decayed = false);
+      decayTicks = 0;
+    }
+  }
+
+  // draw atoms
+  const cols = 6, rows = 4;
+  const padX = W * 0.1, padY = H * 0.15;
+  const cellW = (W - padX * 2) / cols;
+  const cellH = (H - padY * 2) / rows;
+
+  atoms.forEach((atom, i) => {
+    const col = i % cols, row = Math.floor(i / cols);
+    const ax = padX + (col + 0.5) * cellW;
+    const ay = padY + (row + 0.5) * cellH;
+    const r  = Math.min(cellW, cellH) * 0.32;
+
+    if (!atom.decayed) {
+      ctx.beginPath(); ctx.arc(ax, ay, r, 0, Math.PI * 2);
+      ctx.fillStyle = '#4a7c59'; ctx.fill();
+      ctx.strokeStyle = '#2d5a3d'; ctx.lineWidth = 1 * dpr; ctx.stroke();
+    } else {
+      ctx.beginPath(); ctx.arc(ax, ay, r * 0.6, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(180,160,140,0.4)'; ctx.fill();
+      // decay flash
+      ctx.font = `${7 * dpr}px sans-serif`;
+      ctx.fillStyle = 'rgba(200,100,50,0.5)';
+      ctx.textAlign = 'center';
+      ctx.fillText('α', ax, ay + 3 * dpr);
+    }
+  });
+
+  ctx.fillStyle = 'rgba(107,94,80,0.7)';
+  ctx.font = `${8 * dpr}px JetBrains Mono, monospace`;
+  ctx.textAlign = 'center';
+  ctx.fillText('nuclei (green = stable)', W / 2, H - 3 * dpr);
+}
+
+function drawPendulum(dt, beta) {
+  const c   = pendulumCanvas;
+  const ctx = c.getContext('2d');
+  const W = c.width, H = c.height;
+  const dpr = devicePixelRatio;
+  const gamma_inv = Math.sqrt(1 - beta * beta);
+  const gamma = 1 / (gamma_inv || 0.001);
+
+  // pendulum physics in proper time → slower by gamma_inv
+  const dtProper = dt * gamma_inv;
+  const L = H * 0.55;
+  const omega0sq = PEND_G / L;
+  pendVel += -omega0sq * Math.sin(pendAngle) * dtProper;
+  pendVel *= 0.9995; // tiny damping
+  const prevAngle = pendAngle;
+  pendAngle += pendVel * dtProper;
+
+  // count swings
+  if (prevAngle * pendAngle < 0) {
+    // crossed zero
+    if (Math.sign(prevAngle) !== pendLastDir) {
+      pendTicks++;
+      pendLastDir = Math.sign(prevAngle);
+      pendulumCount.textContent = `Ticks: ${pendTicks}  (period × γ = ${gamma.toFixed(2)})`;
+    }
+  }
+
+  ctx.clearRect(0, 0, W, H);
+
+  // pivot
+  const pivX = W / 2, pivY = H * 0.1;
+  ctx.beginPath(); ctx.arc(pivX, pivY, 5 * dpr, 0, Math.PI * 2);
+  ctx.fillStyle = '#8b2500'; ctx.fill();
+
+  // rod
+  const bobX = pivX + L * Math.sin(pendAngle);
+  const bobY = pivY + L * Math.cos(pendAngle);
+  ctx.beginPath(); ctx.moveTo(pivX, pivY); ctx.lineTo(bobX, bobY);
+  ctx.strokeStyle = '#6b5e50'; ctx.lineWidth = 2 * dpr; ctx.stroke();
+
+  // bob
+  const bobR = 10 * dpr;
+  const bobGrad = ctx.createRadialGradient(bobX - bobR * 0.3, bobY - bobR * 0.3, 1, bobX, bobY, bobR);
+  bobGrad.addColorStop(0, '#c44d20');
+  bobGrad.addColorStop(1, '#8b2500');
+  ctx.beginPath(); ctx.arc(bobX, bobY, bobR, 0, Math.PI * 2);
+  ctx.fillStyle = bobGrad; ctx.fill();
+
+  // arc trace
+  ctx.beginPath();
+  ctx.arc(pivX, pivY, L, Math.PI / 2 + Math.PI / 6, Math.PI / 2 + Math.PI * 5/6);
+  ctx.strokeStyle = 'rgba(139,37,0,0.08)'; ctx.lineWidth = 1 * dpr; ctx.stroke();
+
+  ctx.fillStyle = 'rgba(107,94,80,0.7)';
+  ctx.font = `${8 * dpr}px JetBrains Mono, monospace`;
+  ctx.textAlign = 'center';
+  ctx.fillText('period slows by γ', W / 2, H - 3 * dpr);
+}
+
+function animateClocks(ts) {
+  if (!lastClockTs) lastClockTs = ts;
+  const dt = Math.min(ts - lastClockTs, 50); // cap at 50ms
+  lastClockTs = ts;
+  clockBeta = clockSpeedSlider.value / 100;
+
+  // resize if needed
+  [lightCanvas, decayCanvas, pendulumCanvas].forEach(c => {
+    if (c.width !== c.offsetWidth * devicePixelRatio) resizeClockCanvas(c);
+  });
+
+  drawLightClock(dt, clockBeta);
+  drawDecayClock(dt, clockBeta);
+  drawPendulum(dt, clockBeta);
+
+  requestAnimationFrame(animateClocks);
+}
+
+clockSpeedSlider.addEventListener('input', () => {
+  clockSpeedVal.textContent = `${clockSpeedSlider.value}% c`;
+  lightTicks = 0; decayTicks = 0; pendTicks = 0;
+  lightPos = 0; lightDir = 1; lightTrail = [];
+  lightCount.textContent = 'Round trips: 0';
+  decayCount.textContent = 'Decays: 0';
+  pendulumCount.textContent = 'Ticks: 0';
+  atoms.forEach(a => a.decayed = false);
+  decayTimeAcc = 0;
+  pendAngle = Math.PI / 5; pendVel = 0;
 });
 
-requestAnimationFrame(animatePulse);
+requestAnimationFrame(animateClocks);
 </script>
-
 </body>
 </html>
