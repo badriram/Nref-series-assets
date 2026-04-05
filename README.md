@@ -5,6 +5,7 @@
 > Companion assets for two published physics papers on surplus structure in the temporal parameter.
 
 📄 **Paper 1** — [Zenodo: 10.5281/zenodo.19386819](https://doi.org/10.5281/zenodo.19386819)
+
 📄 **Paper 2** — [Zenodo: 10.5281/zenodo.19387399](https://doi.org/10.5281/zenodo.19387399)
 
 -----
