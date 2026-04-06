@@ -4,7 +4,7 @@
 
 > Companion assets for two published physics papers on surplus structure in the temporal parameter.
 
-📄 **Paper 1** — [Zenodo: 10.5281/zenodo.19386819](https://doi.org/10.5281/zenodo.19386819)
+📄 **Paper 1** — [Zenodo: 10.5281/zenodo.19386819](https://doi.org/10.5281/zenodo.19386819) | [Research Square](https://doi.org/10.21203/rs.3.rs-9285775/v1)
 
 📄 **Paper 2** — [Zenodo: 10.5281/zenodo.19387399](https://doi.org/10.5281/zenodo.19387399)
 
@@ -51,7 +51,7 @@ Produces:
 
 The mass-shell relation E² = p²c² + m²c⁴ is a conserved-total resource constraint: total energy is fixed, and spatial momentum competes with internal dynamics for shares of it. The Pikovski Hamiltonian (H ≈ γmc² + Ĥ₀/γ) formalises this suppression. The Page-Wootters framework derives time from entanglement; Smith & Ahmadi (2020) proved PaW conditioning recovers Pikovski time dilation exactly. The SI second (9,192,631,770 cesium oscillations) grounds time operationally in internal state-transition counts — a domain mismatch with t ∈ ℝ. The relational observable N_ref replaces t. Three surplus properties of ℝ are audited and found unconfirmed by any experiment: negative extension (closed timelike curves), loop topology (closed timelike curves), and reversal symmetry (T-symmetry parameter reversal). The full Lorentz transformation including the simultaneity sector is derived from N_ref and the Bondi k-calculus with no manifold or synchronisation convention imported.
 
-📄 [10.5281/zenodo.19386819](https://doi.org/10.5281/zenodo.19386819)
+📄 [10.5281/zenodo.19386819](https://doi.org/10.5281/zenodo.19386819) | [Research Square](https://doi.org/10.21203/rs.3.rs-9285775/v1)
 
 ### Paper 2 — The Bondi k-Factor as Quantum Operator: Sector Decomposition of Relativistic Proper Time
 
