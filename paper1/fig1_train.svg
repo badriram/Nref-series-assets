@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="680" height="520" viewBox="0 0 680 520" xmlns="http://www.w3.org/2000/svg">
+<style>
+  text { font-family: 'Latin Modern Roman', 'CMU Serif', 'Times New Roman', serif; }
+  .th { font-size: 14px; font-weight: 500; fill: #2C2C2A; }
+  .ts { font-size: 12px; font-weight: 400; fill: #5F5E5A; }
+  .tb { font-size: 11px; font-weight: 400; fill: #5F5E5A; }
+</style>
+
+<!-- Panel labels -->
+<text class="th" x="170" y="30" text-anchor="middle">Platform observer P</text>
+<text class="th" x="510" y="30" text-anchor="middle">Passenger T (moving at &#x3B2;)</text>
+
+<!-- Vertical separator -->
+<line x1="340" y1="40" x2="340" y2="490" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="4 4"/>
+
+<!-- LEFT PANEL: Platform observer P -->
+<line x1="170" y1="60" x2="170" y2="440" stroke="#2C2C2A" stroke-width="1"/>
+<line x1="170" y1="60" x2="170" y2="440" stroke="#2C2C2A" stroke-width="2" opacity="0.15"/>
+
+<!-- Count ticks -->
+<line x1="164" y1="80" x2="176" y2="80" stroke="#2C2C2A" stroke-width="0.5"/>
+<text class="ts" x="152" y="84" text-anchor="end">N&#x2080;+L</text>
+<line x1="164" y1="160" x2="176" y2="160" stroke="#2C2C2A" stroke-width="0.5"/>
+<text class="ts" x="152" y="164" text-anchor="end">N&#x2080;+&#xBD;L</text>
+<line x1="164" y1="240" x2="176" y2="240" stroke="#2C2C2A" stroke-width="0.5"/>
+<text class="ts" x="152" y="244" text-anchor="end">N&#x2080;</text>
+<line x1="164" y1="320" x2="176" y2="320" stroke="#2C2C2A" stroke-width="0.5"/>
+<text class="ts" x="152" y="324" text-anchor="end">N&#x2080;&#x2212;&#xBD;L</text>
+<line x1="164" y1="400" x2="176" y2="400" stroke="#2C2C2A" stroke-width="0.5"/>
+<text class="ts" x="152" y="404" text-anchor="end">N&#x2080;&#x2212;L</text>
+
+<!-- Lightning strikes -->
+<polygon points="60,240 70,230 80,240 70,250" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<polygon points="260,240 270,230 280,240 270,250" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="70" y="262" text-anchor="middle">Rear strike</text>
+<text class="ts" x="270" y="262" text-anchor="middle">Front strike</text>
+
+<!-- Light signals to P -->
+<line x1="70" y1="240" x2="170" y2="140" stroke="#EF9F27" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="270" y1="240" x2="170" y2="140" stroke="#EF9F27" stroke-width="1" stroke-dasharray="3 3"/>
+
+<!-- P reception -->
+<circle cx="170" cy="140" r="5" fill="#EF9F27" opacity="0.9"/>
+<text class="ts" x="186" y="128" text-anchor="start" fill="#BA7517">Both signals arrive</text>
+<text class="ts" x="186" y="144" text-anchor="start" fill="#BA7517">at N&#x2080; + &#xBD;L</text>
+
+<!-- Simultaneous line -->
+<line x1="50" y1="140" x2="290" y2="140" stroke="#639922" stroke-width="0.5" stroke-dasharray="6 3"/>
+<text class="ts" x="56" y="130" fill="#639922">P: simultaneous</text>
+
+<!-- RIGHT PANEL: Passenger T -->
+<line x1="510" y1="60" x2="510" y2="440" stroke="#2C2C2A" stroke-width="1"/>
+<line x1="460" y1="420" x2="560" y2="60" stroke="#2C2C2A" stroke-width="2" opacity="0.15"/>
+
+<!-- Lightning in T frame -->
+<polygon points="400,260 410,250 420,260 410,270" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<polygon points="600,220 610,210 620,220 610,230" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="410" y="282" text-anchor="middle">Rear strike</text>
+<text class="ts" x="610" y="242" text-anchor="middle">Front strike</text>
+
+<!-- Front signal to T (arrives first) -->
+<line x1="610" y1="220" x2="520" y2="130" stroke="#EF9F27" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="520" cy="130" r="5" fill="#EF9F27" opacity="0.9"/>
+
+<!-- Rear signal to T (arrives later) -->
+<line x1="410" y1="260" x2="530" y2="100" stroke="#EF9F27" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+<circle cx="540" cy="80" r="5" fill="#EF9F27" opacity="0.6"/>
+
+<!-- T reception labels -->
+<line x1="504" y1="130" x2="516" y2="130" stroke="#2C2C2A" stroke-width="0.5"/>
+<text class="ts" x="496" y="134" text-anchor="end" fill="#BA7517">N&#x2080;/k</text>
+<text class="tb" x="496" y="148" text-anchor="end" fill="#854F0B">Front arrives first</text>
+
+<line x1="504" y1="80" x2="516" y2="80" stroke="#2C2C2A" stroke-width="0.5"/>
+<text class="ts" x="496" y="84" text-anchor="end" fill="#BA7517">N&#x2080;&#xB7;k</text>
+<text class="tb" x="496" y="98" text-anchor="end" fill="#854F0B">Rear arrives later</text>
+
+<!-- The GAP bracket -->
+<line x1="540" y1="80" x2="540" y2="130" stroke="#E24B4A" stroke-width="2"/>
+<line x1="534" y1="80" x2="546" y2="80" stroke="#E24B4A" stroke-width="1.5"/>
+<line x1="534" y1="130" x2="546" y2="130" stroke="#E24B4A" stroke-width="1.5"/>
+
+<text class="ts" x="556" y="100" text-anchor="start" fill="#A32D2D">&#x394;N&#x1D1B; = N&#x2080;(k &#x2212; 1/k)</text>
+<text class="ts" x="556" y="116" text-anchor="start" fill="#A32D2D">= 2N&#x2080;&#x3B2;&#x3B3;</text>
+
+<text class="ts" x="610" y="310" text-anchor="middle" fill="#A32D2D">T: not simultaneous</text>
+
+<!-- Bottom annotation -->
+<line x1="40" y1="460" x2="640" y2="460" stroke="#B4B2A9" stroke-width="0.5"/>
+<text class="tb" x="340" y="482" text-anchor="middle">The vertical gap between T's two receptions is the &#x2212;vx/c&#xB2; term: the (k, 1/k) asymmetry</text>
+<text class="tb" x="340" y="498" text-anchor="middle">accumulated over the spatial baseline. P sees one line. T sees two. The disagreement is bookkeeping.</text>
+</svg>
