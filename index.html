@@ -525,6 +525,98 @@ em { font-style: italic; }
 @media (max-width: 600px) {
   .clock-grid { grid-template-columns: 1fr; }
 }
+
+/* ── PHYSICS SIDENOTES (Tufte-style margin notes for audience B) ── */
+
+.phys-note {
+  margin: 0.6rem 0 1.6rem;
+  font-size: 0.92rem;
+  color: var(--subtle);
+}
+
+.phys-note summary {
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  list-style: none;
+  padding: 0.5rem 0;
+  border-top: 1px solid rgba(139,37,0,0.18);
+  border-bottom: 1px solid rgba(139,37,0,0.18);
+  opacity: 0.85;
+  user-select: none;
+}
+.phys-note summary::-webkit-details-marker { display: none; }
+.phys-note summary::marker { content: ''; }
+.phys-note summary::before { content: '▸ '; }
+.phys-note[open] summary::before { content: '▾ '; }
+.phys-note summary:hover { opacity: 1; }
+
+.phys-note .phys-body {
+  background: rgba(232, 223, 210, 0.45);
+  border-left: 2px solid var(--accent);
+  padding: 1rem 1.2rem;
+  margin-top: 0.6rem;
+  line-height: 1.66;
+  color: var(--ink);
+}
+.phys-note .phys-body p {
+  margin-bottom: 0.75rem;
+  font-size: 0.92rem;
+}
+.phys-note .phys-body p:last-child { margin-bottom: 0; }
+.phys-note .phys-body strong { color: var(--ink); }
+.phys-note .mono {
+  font-family: 'JetBrains Mono', monospace;
+  display: block;
+  text-align: center;
+  color: var(--ink);
+  padding: 0.5rem 0;
+  font-size: 0.94rem;
+  letter-spacing: 0.01em;
+}
+
+/* Desktop: widen article, put notes in a right-side grid column */
+@media (min-width: 1100px) {
+  article {
+    max-width: 1040px;
+  }
+  article > *:not(.paired) {
+    max-width: 680px;
+  }
+  .paired {
+    display: grid;
+    grid-template-columns: 680px 40px 320px;
+    align-items: start;
+    max-width: 1040px;
+    margin: 2.5rem 0 1rem;  /* lifted from child (.callout / .demo-block) */
+  }
+  .paired > *:not(.phys-note) {
+    grid-column: 1;
+    max-width: none;
+    min-width: 0;
+    margin-top: 0;  /* already moved to .paired — avoid double spacing */
+  }
+  /* Contain any negative horizontal margins (e.g. .callout) within col 1 */
+  .paired > .callout {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .phys-note {
+    grid-column: 3;
+    margin: 0;
+    font-size: 0.88rem;
+  }
+  .phys-note summary { display: none; }
+  .phys-note .phys-body {
+    margin-top: 0;
+    padding: 0.9rem 1.1rem;
+  }
+  .phys-note .phys-body p { font-size: 0.88rem; line-height: 1.6; }
+  .phys-note .mono { font-size: 0.88rem; }
+}
 </style>
 </head>
 <body>
@@ -557,12 +649,23 @@ em { font-style: italic; }
 
 <p>Time dilation is the observation that this count changes. A moving cesium clock accumulates fewer oscillations between two events than a stationary one. That's what the experiments measure. Not "time slowing down." A physical process running at a different rate.</p>
 
+<div class="paired">
 <div class="callout">
 <strong>Substitute the definition into the observation.</strong><br><br>
 Definition: one second = 9,192,631,770 cesium oscillations.<br><br>
 Observation: a moving clock records fewer seconds between two events.<br><br>
 Translation: a moving cesium atom undergoes fewer oscillations between two events.<br><br>
 No "time" needed. A physical process is constrained. That's what was measured. The word "time" was inserted between the definition and the discovery, creating an entity that was never in the data.
+</div>
+<details class="phys-note">
+  <summary>physics</summary>
+  <div class="phys-body">
+    <p><strong>The operator behind "fewer flips."</strong> Pikovski, Zych, Costa and Brukner wrote the Hamiltonian for a composite object at velocity v:</p>
+    <span class="mono">Ĥ ≈ γmc² + Ĥ₀/γ</span>
+    <p>Ĥ₀ holds the cesium hyperfine splitting (9.192 GHz). It gets divided by γ. At v ≈ 0.87c, γ = 2 — the transition frequency literally halves. A spectrometer could see it.</p>
+    <p>Smith &amp; Ahmadi (2020) proved that the Page–Wootters framework — where time is emergent from entanglement between a clock and the rest of the universe — recovers this exact suppression when you condition on a reference clock. Two completely different quantum treatments of a moving clock, same result. The "slowdown" isn't a special effect. It's what any consistent quantum picture delivers.</p>
+  </div>
+</details>
 </div>
 
 <div class="separator">• • •</div>
@@ -581,6 +684,7 @@ No "time" needed. A physical process is constrained. That's what was measured. T
 <span class="label">Four-velocity norm — special relativity &nbsp;·&nbsp; <a href="https://en.wikipedia.org/wiki/Four-velocity" style="color:var(--accent);text-decoration:none;opacity:0.8">Minkowski (1908)</a></span>
 </div>
 
+<div class="paired">
 <!-- ── INTERACTIVE BUDGET DEMO ── -->
 <div class="demo-block">
   <div class="demo-label">▸ Interactive — drag to see the trade-off</div>
@@ -615,6 +719,18 @@ No "time" needed. A physical process is constrained. That's what was measured. T
   </div>
 
   <div class="demo-verdict" id="verdict">At rest — full internal capacity. Your chemistry, your clocks, your aging: all running at maximum.</div>
+</div>
+<details class="phys-note">
+  <summary>physics</summary>
+  <div class="phys-body">
+    <p><strong>Where the budget comes from.</strong> It's the mass shell in rate form:</p>
+    <span class="mono">E² = p²c² + m²c⁴</span>
+    <p>Divide by (mc²)². The first term is γ²; the second is (βγ)². Rearranging gives:</p>
+    <span class="mono">(1/γ)² + (v/c)² = 1</span>
+    <p>1/γ is the proper-time rate. v/c is the motion fraction. They square to 1 because the four-velocity is normalized.</p>
+    <p>Geometrically: an object's four-velocity is a unit vector in spacetime, and the budget equation is just Pythagoras applied to its (time, space) components. At rest, the whole vector points in the time direction — full 1/γ, no v/c. As you accelerate, the vector rotates toward the space axis. Massless particles don't have a proper-time direction at all, which is why γ blows up on the approach to <em>c</em>.</p>
+  </div>
+</details>
 </div>
 
 <p>At the speed of light, the spatial speed term equals one. The internal rate equals zero. All capacity consumed by motion. No internal processes can execute. Nothing vibrates. Nothing transitions. Nothing happens inside. This is why photons don't age — they have no internal dynamics left. Their entire capacity is motion.</p>
@@ -893,6 +1009,21 @@ dτ = dt × √(1 − 2GM/rc²)
 </article>
 
 <script>
+/* ══════════════════════════════════════════
+   PHYSICS SIDENOTES — force-open on desktop
+══════════════════════════════════════════ */
+(function() {
+  const mq = window.matchMedia('(min-width: 1100px)');
+  function syncPhysNotes() {
+    if (mq.matches) {
+      document.querySelectorAll('.phys-note').forEach(d => d.setAttribute('open', ''));
+    }
+  }
+  syncPhysNotes();
+  if (mq.addEventListener) mq.addEventListener('change', syncPhysNotes);
+  else if (mq.addListener) mq.addListener(syncPhysNotes);
+})();
+
 /* ══════════════════════════════════════════
    BUDGET SLIDER + γ CURVE
 ══════════════════════════════════════════ */
