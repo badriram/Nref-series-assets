@@ -634,11 +634,13 @@ em { font-style: italic; }
 
 <p class="drop-cap">You've been told a story. It goes like this: there is a thing called spacetime. It is a fabric, a manifold, a four-dimensional arena. When you move fast, spacetime warps around you, and time — whatever that is — slows down. When you stand near something massive, spacetime curves, and time slows down again. Nobody can tell you what time actually is. But they can tell you it dilates.</p>
 
-<p>It's a reasonable story. The equations work. Every prediction matches experiment. But it starts with more than it needs to. The full Lorentz transformation — every equation of special relativity — can be derived from two things only: counts of physical events, and light signals. No manifold. No fabric. No arena. No synchronisation convention. Just a clock ticking and a beam of light.</p>
+<p>It's a reasonable story. The equations work — in one direction. Every experiment in physics history confirms the part of the time-math where clocks tick forward and counts accumulate. The other part — negative time, time loops, time reversal — has no witnesses. A century of measurements, not one observation.</p>
+
+<p>And even the half that works starts with more than it needs to. The full Lorentz transformation — every equation of special relativity — can be derived from two things only: counts of physical events, and light signals. No manifold. No fabric. No arena. No synchronisation convention. Just a clock ticking and a beam of light.</p>
 
 <p>The Lorentz transformation isn't a fact about a geometric object called spacetime. It is a fact about what happens to counting processes when you move. Spacetime is a useful summary of those facts — a tool, not the territory.</p>
 
-<p>The story below uses the same equations, makes the same predictions, and actually explains what's happening — without borrowing a manifold first.</p>
+<p>The story below uses the same equations and recovers every measurement that has ever been made — and actually explains what's happening, without borrowing a manifold first.</p>
 
 <div class="separator">• • •</div>
 
@@ -667,6 +669,8 @@ No "time" needed. A physical process is constrained. That's what was measured. T
   </div>
 </details>
 </div>
+
+<p>There's a subtlety almost every popular account skips. When a physicist writes "<em>t</em>" in an equation, it can mean two different things. Inside a single system — the Schrödinger equation, a decay rate, an atom doing its own thing — "<em>t</em>" is just the continuous stand-in for that system's own count, tied to one physical process. But in the Lorentz transformation, or on a GPS satellite, "<em>t</em>" is something else: a <em>coordination unit</em>, a parameter assembled by a protocol that stitches together counts from separated clocks so observers moving relative to each other can agree on what happened when. The first kind is direct. The second is constructed. Neither one is the river you feel.</p>
 
 <div class="separator">• • •</div>
 
@@ -818,19 +822,19 @@ What isn't required is a substance, a dimension, or an arena called time that ex
 
 <div class="separator">• • •</div>
 
-<span class="section-num">This is not a metaphor</span>
-<h2>The Equation That Proves It</h2>
+<span class="section-num">The machinery underneath</span>
+<h2>The Equation Underneath</h2>
 
-<p>In 2015, a team led by Igor Pikovski published a paper in <em>Nature Physics</em> showing exactly how this works at the quantum level. The Pikovski Hamiltonian describes how a composite system's internal energy changes with velocity:</p>
+<p>In 2015, a team led by Igor Pikovski published a paper in <em>Nature Physics</em> writing down how a composite system's internal energy transforms when the whole thing is moving. The Pikovski Hamiltonian:</p>
 
 <div class="equation">
 H ≈ γmc² + Ĥ₀/γ
 <span class="label">The Pikovski Hamiltonian — internal energy suppressed by 1/γ &nbsp;·&nbsp; <a href="https://doi.org/10.1038/nphys3366" style="color:var(--accent);text-decoration:none;opacity:0.8">Pikovski et al., Nature Physics (2015)</a></span>
 </div>
 
-<p>The Ĥ₀ is the system's internal energy — everything happening inside it. The 1/γ is the Lorentz factor, which shrinks as velocity increases. As velocity increases, 1/γ shrinks. At the speed of light, it reaches zero. The internal energy term is literally multiplied by zero.</p>
+<p>The Ĥ₀ is the internal energy operator — everything happening inside. The 1/γ is the Lorentz factor, which shrinks as velocity increases. As velocity rises, 1/γ shrinks. Approach the speed of light and it heads toward zero. Internal dynamics are suppressed.</p>
 
-<p>This is not an interpretation. It is what the equation says. "Motion constrains internal dynamics" is not a way of looking at the math. It <em>is</em> the math.</p>
+<p>This isn't a new theory, and it doesn't contradict anything in the standard picture. It's the formal machinery that does all the work "time slowing down" was being invoked to do — and it does that work without needing a residual entity called time at all. Nothing in the equation changes; only the story about what the equation is saying.</p>
 
 <div class="separator">• • •</div>
 
@@ -941,7 +945,9 @@ dτ = dt × √(1 − 2GM/rc²)
 
 <p>In 1983, Don Page and William Wootters showed something remarkable. Take a quantum system that is globally static — nothing changes, nothing evolves. Split it into two entangled subsystems. From inside one subsystem, looking at the other, it appears to evolve. Time emerges from entanglement correlations in a system where nothing is "happening" globally.</p>
 
-<p>In 2014, a team in Turin confirmed this experimentally with entangled photons. Time is real for the internal observer. Time is absent for the external observer. Same system. Different perspectives. Time is not a background against which things happen. Time is what internal correlations look like from the inside.</p>
+<p>In 2014, a team in Turin confirmed this in a small quantum system with entangled photons. Time is real for the internal observer. Time is absent for the external observer. Same system. Different perspectives. Time is not a background against which things happen. Time is what internal correlations look like from the inside.</p>
+
+<p>None of this is casual opinion. Three results in the paper series are formal theorems. <strong>Paper 1</strong> proves that if you restrict the Wheeler–DeWitt clock (a standard quantum-gravity model) to values that correspond to real counts — non-negative, non-looping — exactly half the solutions drop out, the half nobody has ever observed. It also proves that "things happening" and "entropy increasing" are formally independent: one doesn't require the other, even though the field has been conflating them for a century. <strong>Paper 2</strong> goes further. It proves that the minus sign in the metric of special relativity — the thing that makes time different from space in every equation — is a theorem of counting plus spatial isotropy. Not a postulate. Put counting in, the minus sign comes out. In the paper's own phrasing: <em>"when time is defined as counting, the signature is output, not input."</em></p>
 
 <div class="comparison">
   <div class="old">
@@ -950,7 +956,7 @@ dτ = dt × √(1 − 2GM/rc²)
   </div>
   <div class="new">
     <div class="tag">What the physics says</div>
-    <p>Time is internal dynamics. It is atoms vibrating, chemistry executing, state changes accumulating. There is no water. There are only fish.</p>
+    <p>What we've been measuring as time is internal dynamics — atoms vibrating, chemistry executing, state changes accumulating. There is no water. There are only fish.</p>
   </div>
 </div>
 
@@ -970,7 +976,7 @@ dτ = dt × √(1 − 2GM/rc²)
 <p><strong>The arrow of time is two separate things.</strong> Why do processes accumulate rather than un-accumulate? That's structural — it's how counting works. You can't un-count. Why does entropy increase? That's a boundary condition — our universe started in a low-entropy state. These are different questions with different answers, conflated by a single symbol.</p>
 
 <div class="callout-warm">
-<strong>Nothing changes in the equations.</strong> Not one prediction is altered. Not one experiment comes out differently. What changes is what the equations are taken to imply about reality. Time travel, the block universe, and spacetime as a fundamental arena were never predicted by physics. They were predicted by properties of the mathematical tools physics borrowed — and then mistook for the territory.
+<strong>Nothing changes in the measurements.</strong> Every experiment ever run still comes out the same. What changes is which parts of the formalism we treat as physics and which we recognize as mathematical baggage. Time travel, the block universe, and spacetime as a fundamental arena were never observed — they were <em>inferred</em> from the surplus parts of the math, the parts that the equations appeared to predict but that a century of instruments has never once returned. Properties of the mathematical tools physics borrowed, mistaken for the territory.
 </div>
 
 <div class="separator">• • •</div>
