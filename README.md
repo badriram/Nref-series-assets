@@ -6,7 +6,7 @@
 
 📄 **Paper 1** — *Surplus Structure in the Temporal Parameter: Consequences of the Mass-Shell Constraint and the N_ref Substitution* — [Zenodo: 10.5281/zenodo.19386819](https://doi.org/10.5281/zenodo.19386819) | [Research Square](https://doi.org/10.21203/rs.3.rs-9285775/v1)
 
-📄 **Paper 2** — *Counting Axioms for the Temporal Parameter: Axiomatic and Categorical Foundations of the N_ref Framework*
+📄 **Paper 2** — *Counting Axioms for the Temporal Parameter: Axiomatic and Categorical Foundations of the N_ref Framework* — [Zenodo: 10.5281/zenodo.19462910](https://doi.org/10.5281/zenodo.19462910)
 
 📄 **Paper 3** — *The Bondi k-Factor as Quantum Operator: A Two-Sector Decomposition of the Lorentz Transformation* — [Zenodo: 10.5281/zenodo.19387399](https://doi.org/10.5281/zenodo.19387399)
 
