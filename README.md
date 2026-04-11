@@ -1,6 +1,6 @@
 # N_ref Paper Series — Code and Figures
 
-[Time doesn't slow down, You do](https://badriram.github.io/Nref-series-assets)
+[Time doesn't slow down, You do](https://badriram.github.io/Nref-series-assets) | [Graph Explorer](https://badriram.github.io/Nref-series-assets/explorer.html)
 
 > Companion assets for a three-paper physics series on surplus structure in the temporal parameter.
 
